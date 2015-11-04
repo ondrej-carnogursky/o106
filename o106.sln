@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "o106", "o106\o106.csproj", "{93571685-EC9F-4CDD-A3A4-9D8469B66176}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "o3DLib", "o3DLib\o3DLib.csproj", "{4D5A9A81-CC98-4143-B56A-5013815A3119}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelixToolkit.Wpf_NET40", "o3DLib\HelixToolkit.Wpf\HelixToolkit.Wpf_NET40.csproj", "{27ED13F0-C6B2-4ABA-A837-52F4775D5455}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93571685-EC9F-4CDD-A3A4-9D8469B66176}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93571685-EC9F-4CDD-A3A4-9D8469B66176}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93571685-EC9F-4CDD-A3A4-9D8469B66176}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93571685-EC9F-4CDD-A3A4-9D8469B66176}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D5A9A81-CC98-4143-B56A-5013815A3119}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D5A9A81-CC98-4143-B56A-5013815A3119}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D5A9A81-CC98-4143-B56A-5013815A3119}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D5A9A81-CC98-4143-B56A-5013815A3119}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27ED13F0-C6B2-4ABA-A837-52F4775D5455}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27ED13F0-C6B2-4ABA-A837-52F4775D5455}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27ED13F0-C6B2-4ABA-A837-52F4775D5455}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27ED13F0-C6B2-4ABA-A837-52F4775D5455}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

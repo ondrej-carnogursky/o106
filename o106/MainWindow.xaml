@@ -1,0 +1,33 @@
+﻿<Window x:Class="o106.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:o106"
+        xmlns:o3d="clr-namespace:o3DLib.Viewport;assembly=o3DLib"
+        xmlns:hx="http://helix-toolkit.org/wpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <o3d:Viewport3D x:Name="viewport">
+            <hx:DefaultLights></hx:DefaultLights>
+            <!--<o3d:RefPlane Plane="{Binding ConstructionPlane,ElementName=viewport}" Size="1000"></o3d:RefPlane>-->
+            <hx:SphereVisual3D Radius="100"></hx:SphereVisual3D>
+            <o3d:RefPlane XAxis="1,0,0" ReverseSide="False">
+                <o3d:RefPlane.Plane>
+                    <hx:Plane3D Position="0,0,0" Normal="0,0,1"></hx:Plane3D>
+                </o3d:RefPlane.Plane>
+            </o3d:RefPlane>
+            <o3d:RefPlane XAxis="0,1,0">
+                <o3d:RefPlane.Plane>
+                    <hx:Plane3D Position="0,0,0" Normal="1,0,0"></hx:Plane3D>
+                </o3d:RefPlane.Plane>
+            </o3d:RefPlane>
+            <o3d:RefPlane XAxis="1,0,0">
+                <o3d:RefPlane.Plane>
+                    <hx:Plane3D Position="0,0,0" Normal="0,-1,0"></hx:Plane3D>
+                </o3d:RefPlane.Plane>
+            </o3d:RefPlane>
+        </o3d:Viewport3D>
+    </Grid>
+</Window>
