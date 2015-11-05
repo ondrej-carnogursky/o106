@@ -9,7 +9,7 @@ using HelixToolkit.Wpf;
 using o3DLib.Extensions;
 
 
-namespace o3DLib.Viewport
+namespace o3DLib//.Viewport
 {
     public class RefPlane: LinesVisual3D
     {
@@ -22,9 +22,6 @@ namespace o3DLib.Viewport
             Children.Add(quad);
         }
 
-
-
-
         public bool ReverseSide
         {
             get { return (bool)GetValue(ReverseSideProperty); }
@@ -33,8 +30,6 @@ namespace o3DLib.Viewport
         public static readonly DependencyProperty ReverseSideProperty =
             DependencyProperty.Register("ReverseSide", typeof(bool), typeof(RefPlane), new PropertyMetadata(false,OnDPropertyChanged));
 
-
-
         public Vector3D XAxis
         {
             get { return (Vector3D)GetValue(XAxisProperty); }
@@ -42,7 +37,6 @@ namespace o3DLib.Viewport
         }
         public static readonly DependencyProperty XAxisProperty =
             DependencyProperty.Register("XAxis", typeof(Vector3D), typeof(RefPlane), new PropertyMetadata(OnDPropertyChanged));
-
 
         public double Size
         {
@@ -79,14 +73,11 @@ namespace o3DLib.Viewport
             points.AddMany(poly3D.Points[0] - refPlane.Size / 16 * yVector, poly3D.Points[0] - refPlane.Size / 16 * yVector + refPlane.Size / 4 * xVector);
             points.AddMany(points.Last<Point3D>(), poly3D.Points[0] + refPlane.Size / 4 * xVector);
             refPlane.Points = points;
-            //todo Doplnit Fill
+            //Fill
             refPlane.quad.Point1 = poly3D.Points[0];
             refPlane.quad.Point2 = poly3D.Points[1];
             refPlane.quad.Point3 = poly3D.Points[2];
             refPlane.quad.Point4 = poly3D.Points[3];
         }
-
-
-
     }
 }

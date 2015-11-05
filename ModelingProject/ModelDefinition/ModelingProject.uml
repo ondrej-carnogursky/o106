@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="74e84946-7441-4692-8d30-90c401cf1816"
+  name="ModelingProject" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <appliedStereotypesInternal>
+    <stereotypeInstance
+      Id="3b431ae7-98dc-44dd-8e26-b672c085288e"
+      name="namespace"
+      profile="CSharpProfile">
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="f6a1595c-8653-4d8a-8b7b-95138012fd8d">
+          <propertyInstance
+            Id="d1325098-42f5-4e31-8cf8-1b699b231958"
+            name="BaseName" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="9665d952-00bb-4766-829e-fe274ba1851d">
+          <propertyInstance
+            Id="df4393e3-5316-48f2-a5e6-15e33bce0bb6"
+            name="ClrAttributes" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="fd05bb09-9ab1-4042-b86c-913d4b5760ae">
+          <propertyInstance
+            Id="6febce85-66f3-4a3c-a91b-627ce42944e6"
+            name="Usings" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+    <stereotypeInstance
+      Id="6aef4d2e-cd87-46d6-9690-ec7b98c853e1"
+      name="TextTemplateBindings"
+      profile="TextTemplateBindings">
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="80f0e2ca-fc39-421e-a135-b7d2780cb4a2">
+          <propertyInstance
+            Id="f4bea635-0e3b-485f-b970-0f32ab5ae75c"
+            name="Alias"
+            value="ClassTemplate|EnumTemplate|InterfaceTemplate|StructTemplate" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="b5832bfd-6d1f-4438-b879-02377b9ceea2">
+          <propertyInstance
+            Id="275da2b3-cce4-42fa-b0e8-b8d6a2dd5c3b"
+            name="TemplateFilePath"
+            value="ClassTemplate=C:\PROGRAM FILES\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4|EnumTemplate=C:\PROGRAM FILES\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\EnumTemplate.t4|InterfaceTemplate=C:\PROGRAM FILES\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4|StructTemplate=C:\PROGRAM FILES\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="7a70d73d-1b15-4112-bdf0-62c186333dac">
+          <propertyInstance
+            Id="bb9702bb-0371-4988-9993-d5cad457d4b2"
+            name="ProjectPath"
+            value="ClassTemplate=..\ModelingProjectLib\ModelingProjectLib.csproj|EnumTemplate=..\ModelingProjectLib\ModelingProjectLib.csproj|InterfaceTemplate=..\ModelingProjectLib\ModelingProjectLib.csproj|StructTemplate=..\ModelingProjectLib\ModelingProjectLib.csproj" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="463a13fe-68b1-4bc7-aa69-799a291b5fc9">
+          <propertyInstance
+            Id="9f443c48-bfc7-43ca-88a6-0038ec534980"
+            name="TargetDirectory"
+            value="ClassTemplate=GeneratedCode\{PackageStructure}|EnumTemplate=GeneratedCode\{PackageStructure}|InterfaceTemplate=GeneratedCode\{PackageStructure}|StructTemplate=GeneratedCode\{PackageStructure}" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="3c2b9620-0f71-46c8-8b14-e008a09da5c4">
+          <propertyInstance
+            Id="53515a7a-4937-44d0-a8bf-e48a41f0935a"
+            name="TargetName"
+            value="ClassTemplate={Name}|EnumTemplate={Name}|InterfaceTemplate={Name}|StructTemplate={Name}" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="ce133ff4-d3c3-4e37-aed4-4e780a03ab89">
+          <propertyInstance
+            Id="dde5302c-6425-4eed-a6e7-79f7374e08fa"
+            name="Overwrite"
+            value="ClassTemplate=True|EnumTemplate=True|InterfaceTemplate=True|StructTemplate=True" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="c360dead-d9a3-4407-9a96-271234844f86">
+          <propertyInstance
+            Id="c079e265-735d-42da-bcfc-d905f1f39890"
+            name="Parameters" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+  </appliedStereotypesInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="67a69eed-5916-48ac-8276-ebc4402f696b">
+      <profileInstance
+        Id="2ccf99ac-f1bf-49d8-b341-a2c29513d59c"
+        name="CSharpProfile" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="5fb2cd12-bd01-4634-9fed-11b89230e2c6">
+      <profileInstance
+        Id="b0b00e13-445b-40cb-8304-4698d98a317e"
+        name="TextTemplateBindings" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="8f8c504f-b5a0-4b69-9e16-a9a07de58982"
+        name="Sketch"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="52208c4f-56fe-443e-9348-50174c80b304"
+            name="RefPlane"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="f22121e2-b822-476d-adfa-9d9c163b60da"
+                LastKnownName="o3DLib.RefPlane"
+                LastKnownLocation="ModelingProject.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="87d587be-1b5b-4660-be5e-062909503b53"
+        name="Entity2D"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="743421f9-eb47-4cdf-8a67-39bcd403d203"
+            name="Points"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="c10783a5-5a9d-4d7d-9764-b3e6deec8731"
+                LastKnownName="Point"
+                LastKnownLocation="ModelingProject.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="f22121e2-b822-476d-adfa-9d9c163b60da"
+        name="o3DLib.RefPlane" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="c10783a5-5a9d-4d7d-9764-b3e6deec8731"
+        name="Point" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="0f6e044a-3dbc-41fd-ba65-893e492f253b"
+        name="Rel2D"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="621db05b-3a46-46b2-9eff-f992551c7b2a"
+        name="Rel2DType"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="079469f7-20d5-4cfd-a0bf-e90fdb0c570f"
+            isDerived="false"
+            sourceEndRoleName="Rel2DType"
+            targetEndRoleName="Rel2D"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="0f6e044a-3dbc-41fd-ba65-893e492f253b"
+              LastKnownName="Rel2D"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1cb92c20-0978-4373-868d-35761904b537"
+                  name="Rel2DType"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="75c713c7-8886-4c81-81b0-0ce6bdaffe73"
+                  name="Rel2D"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="062dfc17-c333-412c-a320-df4649ce4ac7"
+            name="Connect">
+            <description>Apply to Entity+Point or 2 Points</description>
+            <specification>
+              <literalInteger
+                Id="be78f18a-4777-42a5-bb66-6dcf0c027bda"
+                name="Integer"
+                value="1" />
+            </specification>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="ca5b322a-a04f-4920-9798-101ca78e4b03"
+            name="Horizontal">
+            <description>Apply for Entity or 2 Points</description>
+            <specification>
+              <literalInteger
+                Id="f189448c-1279-48f7-b763-713935c23bd5"
+                name="Integer"
+                value="2" />
+            </specification>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="b787ab44-be00-4758-817f-d609aa09e772"
+            name="Vertical">
+            <description>Apply for Entity or 2 Points</description>
+            <specification>
+              <literalInteger
+                Id="108717ef-d9fa-420b-98ad-0d0a1b1ed7b1"
+                name="Integer"
+                value="3" />
+            </specification>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="ab17e8ed-3102-443d-ae2c-9b0faf07d4d5"
+            name="Collinear">
+            <specification>
+              <literalInteger
+                Id="47e7c7c1-f903-43a2-9f4d-35c9ecfc5dc8"
+                name="Integer"
+                value="4" />
+            </specification>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="9a38bb18-e87a-407a-af80-c203bd50d86c"
+            name="Parallel">
+            <specification>
+              <literalInteger
+                Id="a65898bd-adc2-4797-926b-78ece8e77aea"
+                name="Integer"
+                value="5" />
+            </specification>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="d0b05223-120f-470d-b26a-4790acb90359"
+            name="Perpendicular">
+            <specification>
+              <literalInteger
+                Id="5aebc7ca-9f25-454c-a359-6172a3b9cd49"
+                name="Integer"
+                value="6" />
+            </specification>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="b984150a-ff77-42e9-8ffa-bb0a94136322"
+            name="Lock">
+            <description>Fixed position</description>
+            <specification>
+              <literalInteger
+                Id="2dd5cbb0-0bc2-45c7-a013-dca33aacdd60"
+                name="Integer"
+                value="0" />
+            </specification>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="a509cbb4-93e0-411b-8ad4-2bc94c631b19"
+            name="Equal">
+            <description>Same length/radius</description>
+            <specification>
+              <literalInteger
+                Id="042f485f-b98e-4e44-bb3c-6ddd0603dbcb"
+                name="Integer"
+                value="7" />
+            </specification>
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>
