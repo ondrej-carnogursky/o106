@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="03437b05-0819-4747-9e2c-35ef53013ad4" name="SketchClassDiagram" linkedPackageId="54fe5fa6-e675-474a-b21f-4d0f460429cf" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="03437b05-0819-4747-9e2c-35ef53013ad4" name="SketchClassDiagram" linkedPackageId="54fe5fa6-e675-474a-b21f-4d0f460429cf" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <appliedStereotypesInternal>
     <stereotypeInstance Id="dc0b1f55-b4a8-47bd-a05c-6eb8afed0f00" name="namespace" profile="CSharpProfile">
       <elementDefinition Id="3b431ae7-98dc-44dd-8e26-b672c085288e" />
@@ -72,170 +72,292 @@
       </propertyInstances>
     </stereotypeInstance>
   </appliedStereotypesInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="5276d5ff-c130-40ac-a63e-037785707f1b">
-      <profileInstance Id="7563b082-443f-4390-b1d0-bb6a7e001af3" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="3cc9bd7b-d1f7-408c-b01f-5d6c9ac977b2">
-      <profileInstance Id="f876cc8c-c00b-4854-b7e6-f16f115866c7" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="eba6704f-2e26-49cf-a1e4-9d0e9429fde8">
-      <profileInstance Id="15b2ae97-ff3c-4812-b17b-2c01b2ec2e8c" name="CSharpProfile">
-        <elementDefinition Id="2ccf99ac-f1bf-49d8-b341-a2c29513d59c" />
-      </profileInstance>
-      <elementDefinition Id="67a69eed-5916-48ac-8276-ebc4402f696b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="ffb09fc8-5cd3-4f45-b04e-f430b56f7f0b">
-      <profileInstance Id="39854dc7-0bc5-4a44-836d-4a797fd00d43" name="TextTemplateBindings">
-        <elementDefinition Id="b0b00e13-445b-40cb-8304-4698d98a317e" />
-      </profileInstance>
-      <elementDefinition Id="5fb2cd12-bd01-4634-9fed-11b89230e2c6" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
-    <logicalClassDesignerModelHasTypes>
-      <class Id="1bbe6f65-85ff-411f-9a92-bdc364308da7" name="Sketch" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="8f8c504f-b5a0-4b69-9e16-a9a07de58982" />
-        <ownedAttributesInternal>
-          <property Id="6893d7b9-001f-437d-8d9e-64f6dbbb306d" name="RefPlane" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="52208c4f-56fe-443e-9348-50174c80b304" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="faf09104-2ced-4fb8-aab1-ef944ed2584d" LastKnownName="o3DLib.RefPlane" />
-            </type_NamedElement>
-          </property>
-        </ownedAttributesInternal>
-      </class>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
-      <class Id="f77df4fe-8943-4657-a360-8ab52f0c51c1" name="Entity2D" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="87d587be-1b5b-4660-be5e-062909503b53" />
-        <ownedAttributesInternal>
-          <property Id="5e5e39ce-df16-45ed-9e08-7088e7808e98" name="Points" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="743421f9-eb47-4cdf-8a67-39bcd403d203" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="095338ca-0933-4fb2-b2b8-5e2c5d25a05b" LastKnownName="Point" />
-            </type_NamedElement>
-          </property>
-        </ownedAttributesInternal>
-      </class>
-    </logicalClassDesignerModelHasTypes>
     <packageHasNamedElement>
       <referencedType Id="faf09104-2ced-4fb8-aab1-ef944ed2584d" name="o3DLib.RefPlane" isAbstract="false" isLeaf="false" cachedFullName="o3DLib.RefPlane">
         <elementDefinition Id="f22121e2-b822-476d-adfa-9d9c163b60da" />
       </referencedType>
     </packageHasNamedElement>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="16898a25-dbb4-495c-b81d-cf6720289862" name="2D">
+        <elementDefinition Id="df2ff0e4-3d7a-4788-a687-f7dd61b44dc4" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <enumeration Id="01996b8b-0c07-4c0b-b656-73cfd33221d3" name="Rel2DType" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="621db05b-3a46-46b2-9eff-f992551c7b2a" />
+              <ownedLiterals>
+                <enumerationLiteral Id="c4143089-04b2-45c3-b8ff-e1d0cf72bad8" name="Connect">
+                  <description>Apply to Entity+Point or 2 Points</description>
+                  <elementDefinition Id="062dfc17-c333-412c-a320-df4649ce4ac7" />
+                  <specification>
+                    <literalInteger Id="f2033c5d-5e2e-47c2-82d1-b721a65edece" name="Integer" value="1">
+                      <elementDefinition Id="be78f18a-4777-42a5-bb66-6dcf0c027bda" />
+                    </literalInteger>
+                  </specification>
+                </enumerationLiteral>
+                <enumerationLiteral Id="6173c0ba-c81b-4df3-83df-bb0e51814133" name="Horizontal">
+                  <description>Apply for Entity or 2 Points</description>
+                  <elementDefinition Id="ca5b322a-a04f-4920-9798-101ca78e4b03" />
+                  <specification>
+                    <literalInteger Id="025bed3a-87f9-40b0-9a08-5212d756f485" name="Integer" value="2">
+                      <elementDefinition Id="f189448c-1279-48f7-b763-713935c23bd5" />
+                    </literalInteger>
+                  </specification>
+                </enumerationLiteral>
+                <enumerationLiteral Id="0ff4ef67-5a91-4c5c-afb3-3b62e08b283f" name="Vertical">
+                  <description>Apply for Entity or 2 Points</description>
+                  <elementDefinition Id="b787ab44-be00-4758-817f-d609aa09e772" />
+                  <specification>
+                    <literalInteger Id="06cd3360-7237-46f7-8085-446eab015f4a" name="Integer" value="3">
+                      <elementDefinition Id="108717ef-d9fa-420b-98ad-0d0a1b1ed7b1" />
+                    </literalInteger>
+                  </specification>
+                </enumerationLiteral>
+                <enumerationLiteral Id="79d23361-1f4c-460d-bdbb-4f084a54ee61" name="Collinear">
+                  <elementDefinition Id="ab17e8ed-3102-443d-ae2c-9b0faf07d4d5" />
+                  <specification>
+                    <literalInteger Id="c3a16be9-bb56-4955-97a6-0649c3a3ff09" name="Integer" value="4">
+                      <elementDefinition Id="47e7c7c1-f903-43a2-9f4d-35c9ecfc5dc8" />
+                    </literalInteger>
+                  </specification>
+                </enumerationLiteral>
+                <enumerationLiteral Id="1abf7846-dd9d-4702-a57d-7648fa890baa" name="Parallel">
+                  <elementDefinition Id="9a38bb18-e87a-407a-af80-c203bd50d86c" />
+                  <specification>
+                    <literalInteger Id="cd9521b5-9653-425c-8f3d-104a3e28ea99" name="Integer" value="5">
+                      <elementDefinition Id="a65898bd-adc2-4797-926b-78ece8e77aea" />
+                    </literalInteger>
+                  </specification>
+                </enumerationLiteral>
+                <enumerationLiteral Id="b295a943-91b2-44a7-9e0a-b66f9cdfa8e2" name="Perpendicular">
+                  <elementDefinition Id="d0b05223-120f-470d-b26a-4790acb90359" />
+                  <specification>
+                    <literalInteger Id="4566c341-c947-4fd4-a91a-63182b6ae41a" name="Integer" value="6">
+                      <elementDefinition Id="5aebc7ca-9f25-454c-a359-6172a3b9cd49" />
+                    </literalInteger>
+                  </specification>
+                </enumerationLiteral>
+                <enumerationLiteral Id="5ed04931-9a9c-45f8-83f8-95b3db708fdf" name="Lock">
+                  <description>Fixed position</description>
+                  <elementDefinition Id="b984150a-ff77-42e9-8ffa-bb0a94136322" />
+                  <specification>
+                    <literalInteger Id="b4539b49-b840-429b-87bd-a08b54abdac1" name="Integer" value="0">
+                      <elementDefinition Id="2dd5cbb0-0bc2-45c7-a013-dca33aacdd60" />
+                    </literalInteger>
+                  </specification>
+                </enumerationLiteral>
+                <enumerationLiteral Id="f690f25f-1086-4c36-8271-1c626b31cfe1" name="Equal">
+                  <description>Same length/radius</description>
+                  <elementDefinition Id="a509cbb4-93e0-411b-8ad4-2bc94c631b19" />
+                  <specification>
+                    <literalInteger Id="94ba8c72-434b-4a8e-b99f-a8fc79eedbdd" name="Integer" value="7">
+                      <elementDefinition Id="042f485f-b98e-4e44-bb3c-6ddd0603dbcb" />
+                    </literalInteger>
+                  </specification>
+                </enumerationLiteral>
+              </ownedLiterals>
+            </enumeration>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="16deae71-2918-4291-971d-d2fd231765e7" name="Rel2D" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="0f6e044a-3dbc-41fd-ba65-893e492f253b" />
+              <targetEnds>
+                <association Id="7e5b1886-d032-4367-b113-48ba1337e1f5" isDerived="false" sourceEndRoleName="" targetEndRoleName="Rel2DType" isLeaf="false" isAbstract="false">
+                  <enumerationMoniker Id="01996b8b-0c07-4c0b-b656-73cfd33221d3" LastKnownName="Rel2DType" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="d7416d48-8b87-49bd-b11e-70f656e45934" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="aae11a39-11ae-449d-a743-4eaeed148b89" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="5b3426f1-0428-436f-a135-e563a77fbdde" name="Rel2DType" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="d64270bc-f3a1-4313-9b3a-105372443013" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="6d756101-9bee-43e8-b52e-fe970130eaf7" />
+                </association>
+              </targetEnds>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="1bbe6f65-85ff-411f-9a92-bdc364308da7" name="Sketch" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="8f8c504f-b5a0-4b69-9e16-a9a07de58982" />
+              <ownedAttributesInternal>
+                <property Id="6893d7b9-001f-437d-8d9e-64f6dbbb306d" name="RefPlane" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="52208c4f-56fe-443e-9348-50174c80b304" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="faf09104-2ced-4fb8-aab1-ef944ed2584d" LastKnownName="o3DLib.RefPlane" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="f77df4fe-8943-4657-a360-8ab52f0c51c1" name="Entity2D" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="87d587be-1b5b-4660-be5e-062909503b53" />
+              <ownedAttributesInternal>
+                <property Id="5e5e39ce-df16-45ed-9e08-7088e7808e98" name="Points" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="743421f9-eb47-4cdf-8a67-39bcd403d203" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="5d7117aa-064e-4ce5-aaea-f50d0442a739" LastKnownName="IList&lt;Point&gt;" />
+                  </type_NamedElement>
+                </property>
+                <property Id="d4d34f7e-16b1-455a-9561-85745d45bb8d" name="Rels2D" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="681a22f1-0ee8-422b-b6b3-cbe30766a6cc" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="df9efa73-785e-4614-9d71-ac31b02ad256" LastKnownName="ILIst&lt;Rel2D&gt;" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="348a50f9-0668-4775-b3da-d6f758a4ed11" name="GetKeyPoint" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="48b0bfcd-51ca-4cff-8ade-fa054b2d0da9" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="3c50ac17-419d-476e-96b8-5ac5b574f396" name="type" direction="In" isUnique="false">
+                        <elementDefinition Id="a6af91df-e323-4e15-9607-fb4a4e5ee573" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="f14227f2-afc3-43f9-a5fc-fd063bd402e6" LastKnownName="KeyPointType" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="84f32641-24a1-467c-a962-454da78d2ea0" direction="Return" isUnique="false">
+                        <elementDefinition Id="c2163a55-b79c-4f14-b6ac-d554c7889b34" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="f075b633-3fc5-4040-ae31-f8489d6c7004" LastKnownName="Point2D" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="84097d5a-2c0d-4982-8c09-243912f56df6" name="SatisfyRels" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="2ede8286-74ed-43b6-a65b-b1a04ad88f82" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="e126fb53-3c5a-4451-9fcd-dcd68bf69ebf" direction="Return" isUnique="false">
+                        <elementDefinition Id="4496e934-21c1-4b4f-9a35-cbb1f6965be6" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="7c19f1cb-de03-4e26-86be-4dca9ad0d29d" LastKnownName="bool" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="7320c751-3ce4-4257-8acd-4f32428bfd3b" name="Point2D" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="23b71885-720f-4e1a-ae15-b173212d49b0" />
+              <generalsInternal>
+                <generalization Id="3755b24e-a11e-4eef-931b-8f78dfb8a165" isSubstitutable="false">
+                  <classMoniker Id="f77df4fe-8943-4657-a360-8ab52f0c51c1" LastKnownName="Entity2D" />
+                  <elementDefinition Id="10d5d57b-8487-4e07-8dd1-956129e5630c" />
+                </generalization>
+              </generalsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="5a09c772-93ed-4fdb-b162-036dc0bf0c96" name="Line2D" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="d7fd3f21-d945-4d43-903a-18f7e0edf8c4" />
+              <generalsInternal>
+                <generalization Id="cadf131c-4873-4c4e-9825-264e2a14981a" isSubstitutable="false">
+                  <classMoniker Id="f77df4fe-8943-4657-a360-8ab52f0c51c1" LastKnownName="Entity2D" />
+                  <elementDefinition Id="0f98755a-7630-4058-a7fb-c160a25c1148" />
+                </generalization>
+              </generalsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <enumeration Id="058a2fdd-48e7-49db-9204-d2d9d1d45e09" name="KeyPointType" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="18ded0fa-3c24-4bea-a7ac-c49eeb87e33b" />
+              <ownedLiterals>
+                <enumerationLiteral Id="3068e369-1a61-4f1c-8686-1f8622266aa9" name="Start">
+                  <elementDefinition Id="84749d1f-de58-4ce6-afa5-f0dd87a703a5" />
+                  <specification>
+                    <literalInteger Id="3fa32b48-c06b-469b-b970-9d9ab279a380" name="Integer" value="0">
+                      <elementDefinition Id="7a3a68c9-f627-43ad-ba06-af341ca7f42b" />
+                    </literalInteger>
+                  </specification>
+                </enumerationLiteral>
+                <enumerationLiteral Id="2b0398a6-58b4-480e-8627-59bb16a7410a" name="End">
+                  <elementDefinition Id="139e7d51-50b8-4e4a-83a2-46efae409f4a" />
+                  <specification>
+                    <literalInteger Id="f1797029-d3ec-4e8a-b7a8-6b929ea020cb" name="Integer" value="1">
+                      <elementDefinition Id="6c043d54-f95c-4ab5-a47a-0ba40a32db60" />
+                    </literalInteger>
+                  </specification>
+                </enumerationLiteral>
+                <enumerationLiteral Id="e9577984-f953-4e19-a22b-93a5bfdb7042" name="Middle">
+                  <elementDefinition Id="178be70f-3899-46df-8b8c-383899f85e21" />
+                  <specification>
+                    <literalInteger Id="2fa943ed-4a71-4911-a888-60f3b4913213" name="Integer" value="2">
+                      <elementDefinition Id="b8a7f6fd-3616-4457-92e9-5a2492e53b49" />
+                    </literalInteger>
+                  </specification>
+                </enumerationLiteral>
+              </ownedLiterals>
+            </enumeration>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
     <packageHasNamedElement>
-      <referencedType Id="095338ca-0933-4fb2-b2b8-5e2c5d25a05b" name="Point" isAbstract="false" isLeaf="false" cachedFullName="Point">
-        <elementDefinition Id="c10783a5-5a9d-4d7d-9764-b3e6deec8731" />
+      <referencedType Id="5d7117aa-064e-4ce5-aaea-f50d0442a739" name="IList&lt;Point&gt;" isAbstract="false" isLeaf="false" cachedFullName="IList&lt;Point&gt;">
+        <elementDefinition Id="05d63692-b72d-4e8a-af9e-af091190880d" />
       </referencedType>
     </packageHasNamedElement>
-    <logicalClassDesignerModelHasTypes>
-      <class Id="16deae71-2918-4291-971d-d2fd231765e7" name="Rel2D" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="0f6e044a-3dbc-41fd-ba65-893e492f253b" />
-      </class>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
-      <enumeration Id="01996b8b-0c07-4c0b-b656-73cfd33221d3" name="Rel2DType" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="621db05b-3a46-46b2-9eff-f992551c7b2a" />
-        <targetEnds>
-          <association Id="ad90389d-ce1c-4e03-b7de-d5f6e55cbf42" isDerived="false" sourceEndRoleName="Rel2DType" targetEndRoleName="Rel2D" isLeaf="false" isAbstract="false">
-            <classMoniker Id="16deae71-2918-4291-971d-d2fd231765e7" LastKnownName="Rel2D" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="903242ce-ae04-4ea6-b6f7-10163fd8d4dd" name="Rel2DType" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="1cb92c20-0978-4373-868d-35761904b537" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="d9044f94-5f78-4b34-b68d-79133375ade7" name="Rel2D" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="75c713c7-8886-4c81-81b0-0ce6bdaffe73" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="079469f7-20d5-4cfd-a0bf-e90fdb0c570f" />
-          </association>
-        </targetEnds>
-        <ownedLiterals>
-          <enumerationLiteral Id="c4143089-04b2-45c3-b8ff-e1d0cf72bad8" name="Connect">
-            <description>Apply to Entity+Point or 2 Points</description>
-            <elementDefinition Id="062dfc17-c333-412c-a320-df4649ce4ac7" />
-            <specification>
-              <literalInteger Id="f2033c5d-5e2e-47c2-82d1-b721a65edece" name="Integer" value="1">
-                <elementDefinition Id="be78f18a-4777-42a5-bb66-6dcf0c027bda" />
-              </literalInteger>
-            </specification>
-          </enumerationLiteral>
-          <enumerationLiteral Id="6173c0ba-c81b-4df3-83df-bb0e51814133" name="Horizontal">
-            <description>Apply for Entity or 2 Points</description>
-            <elementDefinition Id="ca5b322a-a04f-4920-9798-101ca78e4b03" />
-            <specification>
-              <literalInteger Id="025bed3a-87f9-40b0-9a08-5212d756f485" name="Integer" value="2">
-                <elementDefinition Id="f189448c-1279-48f7-b763-713935c23bd5" />
-              </literalInteger>
-            </specification>
-          </enumerationLiteral>
-          <enumerationLiteral Id="0ff4ef67-5a91-4c5c-afb3-3b62e08b283f" name="Vertical">
-            <description>Apply for Entity or 2 Points</description>
-            <elementDefinition Id="b787ab44-be00-4758-817f-d609aa09e772" />
-            <specification>
-              <literalInteger Id="06cd3360-7237-46f7-8085-446eab015f4a" name="Integer" value="3">
-                <elementDefinition Id="108717ef-d9fa-420b-98ad-0d0a1b1ed7b1" />
-              </literalInteger>
-            </specification>
-          </enumerationLiteral>
-          <enumerationLiteral Id="79d23361-1f4c-460d-bdbb-4f084a54ee61" name="Collinear">
-            <elementDefinition Id="ab17e8ed-3102-443d-ae2c-9b0faf07d4d5" />
-            <specification>
-              <literalInteger Id="c3a16be9-bb56-4955-97a6-0649c3a3ff09" name="Integer" value="4">
-                <elementDefinition Id="47e7c7c1-f903-43a2-9f4d-35c9ecfc5dc8" />
-              </literalInteger>
-            </specification>
-          </enumerationLiteral>
-          <enumerationLiteral Id="1abf7846-dd9d-4702-a57d-7648fa890baa" name="Parallel">
-            <elementDefinition Id="9a38bb18-e87a-407a-af80-c203bd50d86c" />
-            <specification>
-              <literalInteger Id="cd9521b5-9653-425c-8f3d-104a3e28ea99" name="Integer" value="5">
-                <elementDefinition Id="a65898bd-adc2-4797-926b-78ece8e77aea" />
-              </literalInteger>
-            </specification>
-          </enumerationLiteral>
-          <enumerationLiteral Id="b295a943-91b2-44a7-9e0a-b66f9cdfa8e2" name="Perpendicular">
-            <elementDefinition Id="d0b05223-120f-470d-b26a-4790acb90359" />
-            <specification>
-              <literalInteger Id="4566c341-c947-4fd4-a91a-63182b6ae41a" name="Integer" value="6">
-                <elementDefinition Id="5aebc7ca-9f25-454c-a359-6172a3b9cd49" />
-              </literalInteger>
-            </specification>
-          </enumerationLiteral>
-          <enumerationLiteral Id="5ed04931-9a9c-45f8-83f8-95b3db708fdf" name="Lock">
-            <description>Fixed position</description>
-            <elementDefinition Id="b984150a-ff77-42e9-8ffa-bb0a94136322" />
-            <specification>
-              <literalInteger Id="b4539b49-b840-429b-87bd-a08b54abdac1" name="Integer" value="0">
-                <elementDefinition Id="2dd5cbb0-0bc2-45c7-a013-dca33aacdd60" />
-              </literalInteger>
-            </specification>
-          </enumerationLiteral>
-          <enumerationLiteral Id="f690f25f-1086-4c36-8271-1c626b31cfe1" name="Equal">
-            <description>Same length/radius</description>
-            <elementDefinition Id="a509cbb4-93e0-411b-8ad4-2bc94c631b19" />
-            <specification>
-              <literalInteger Id="94ba8c72-434b-4a8e-b99f-a8fc79eedbdd" name="Integer" value="7">
-                <elementDefinition Id="042f485f-b98e-4e44-bb3c-6ddd0603dbcb" />
-              </literalInteger>
-            </specification>
-          </enumerationLiteral>
-        </ownedLiterals>
-      </enumeration>
-    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="df9efa73-785e-4614-9d71-ac31b02ad256" name="ILIst&lt;Rel2D&gt;" isAbstract="false" isLeaf="false" cachedFullName="ILIst&lt;Rel2D&gt;">
+        <elementDefinition Id="85c69e69-933c-46de-8fe9-3bda2c5bd72e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="f14227f2-afc3-43f9-a5fc-fd063bd402e6" name="KeyPointType" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject::2D::KeyPointType">
+        <elementDefinition Id="18ded0fa-3c24-4bea-a7ac-c49eeb87e33b" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="f075b633-3fc5-4040-ae31-f8489d6c7004" name="Point2D" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject::2D::Point2D">
+        <elementDefinition Id="23b71885-720f-4e1a-ae15-b173212d49b0" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="7c19f1cb-de03-4e26-86be-4dca9ad0d29d" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
+        <elementDefinition Id="821980d7-c50c-4378-9ae4-894c6e83deac" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="54fe5fa6-e675-474a-b21f-4d0f460429cf" name="ModelingProject">
     <elementDefinition Id="74e84946-7441-4692-8d30-90c401cf1816" />
+    <profileInstances>
+      <packageHasProfileInstances Id="5276d5ff-c130-40ac-a63e-037785707f1b">
+        <profileInstance Id="7563b082-443f-4390-b1d0-bb6a7e001af3" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="3cc9bd7b-d1f7-408c-b01f-5d6c9ac977b2">
+        <profileInstance Id="f876cc8c-c00b-4854-b7e6-f16f115866c7" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="eba6704f-2e26-49cf-a1e4-9d0e9429fde8">
+        <profileInstance Id="15b2ae97-ff3c-4812-b17b-2c01b2ec2e8c" name="CSharpProfile">
+          <elementDefinition Id="2ccf99ac-f1bf-49d8-b341-a2c29513d59c" />
+        </profileInstance>
+        <elementDefinition Id="67a69eed-5916-48ac-8276-ebc4402f696b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="ffb09fc8-5cd3-4f45-b04e-f430b56f7f0b">
+        <profileInstance Id="39854dc7-0bc5-4a44-836d-4a797fd00d43" name="TextTemplateBindings">
+          <elementDefinition Id="b0b00e13-445b-40cb-8304-4698d98a317e" />
+        </profileInstance>
+        <elementDefinition Id="5fb2cd12-bd01-4634-9fed-11b89230e2c6" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

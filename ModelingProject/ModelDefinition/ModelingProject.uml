@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="74e84946-7441-4692-8d30-90c401cf1816"
   name="ModelingProject" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -113,64 +113,6 @@
   </profileInstances>
   <packagedElements>
     <packageHasNamedElement>
-      <class
-        Id="8f8c504f-b5a0-4b69-9e16-a9a07de58982"
-        name="Sketch"
-        isAbstract="false"
-        isLeaf="false"
-        isActiveClass="false">
-        <ownedAttributesInternal>
-          <property
-            Id="52208c4f-56fe-443e-9348-50174c80b304"
-            name="RefPlane"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="f22121e2-b822-476d-adfa-9d9c163b60da"
-                LastKnownName="o3DLib.RefPlane"
-                LastKnownLocation="ModelingProject.uml" />
-            </type_NamedElement>
-          </property>
-        </ownedAttributesInternal>
-      </class>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <class
-        Id="87d587be-1b5b-4660-be5e-062909503b53"
-        name="Entity2D"
-        isAbstract="false"
-        isLeaf="false"
-        isActiveClass="false">
-        <ownedAttributesInternal>
-          <property
-            Id="743421f9-eb47-4cdf-8a67-39bcd403d203"
-            name="Points"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="c10783a5-5a9d-4d7d-9764-b3e6deec8731"
-                LastKnownName="Point"
-                LastKnownLocation="ModelingProject.uml" />
-            </type_NamedElement>
-          </property>
-        </ownedAttributesInternal>
-      </class>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <undefinedType
         Id="f22121e2-b822-476d-adfa-9d9c163b60da"
         name="o3DLib.RefPlane" />
@@ -181,148 +123,10 @@
         name="Point" />
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <class
-        Id="0f6e044a-3dbc-41fd-ba65-893e492f253b"
-        name="Rel2D"
-        isAbstract="false"
-        isLeaf="false"
-        isActiveClass="false" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <enumeration
-        Id="621db05b-3a46-46b2-9eff-f992551c7b2a"
-        name="Rel2DType"
-        isAbstract="false"
-        isLeaf="false">
-        <targetEnds>
-          <association
-            Id="079469f7-20d5-4cfd-a0bf-e90fdb0c570f"
-            isDerived="false"
-            sourceEndRoleName="Rel2DType"
-            targetEndRoleName="Rel2D"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="0f6e044a-3dbc-41fd-ba65-893e492f253b"
-              LastKnownName="Rel2D"
-              LastKnownLocation="ModelingProject.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="1cb92c20-0978-4373-868d-35761904b537"
-                  name="Rel2DType"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="75c713c7-8886-4c81-81b0-0ce6bdaffe73"
-                  name="Rel2D"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-        </targetEnds>
-        <ownedLiterals>
-          <enumerationLiteral
-            Id="062dfc17-c333-412c-a320-df4649ce4ac7"
-            name="Connect">
-            <description>Apply to Entity+Point or 2 Points</description>
-            <specification>
-              <literalInteger
-                Id="be78f18a-4777-42a5-bb66-6dcf0c027bda"
-                name="Integer"
-                value="1" />
-            </specification>
-          </enumerationLiteral>
-          <enumerationLiteral
-            Id="ca5b322a-a04f-4920-9798-101ca78e4b03"
-            name="Horizontal">
-            <description>Apply for Entity or 2 Points</description>
-            <specification>
-              <literalInteger
-                Id="f189448c-1279-48f7-b763-713935c23bd5"
-                name="Integer"
-                value="2" />
-            </specification>
-          </enumerationLiteral>
-          <enumerationLiteral
-            Id="b787ab44-be00-4758-817f-d609aa09e772"
-            name="Vertical">
-            <description>Apply for Entity or 2 Points</description>
-            <specification>
-              <literalInteger
-                Id="108717ef-d9fa-420b-98ad-0d0a1b1ed7b1"
-                name="Integer"
-                value="3" />
-            </specification>
-          </enumerationLiteral>
-          <enumerationLiteral
-            Id="ab17e8ed-3102-443d-ae2c-9b0faf07d4d5"
-            name="Collinear">
-            <specification>
-              <literalInteger
-                Id="47e7c7c1-f903-43a2-9f4d-35c9ecfc5dc8"
-                name="Integer"
-                value="4" />
-            </specification>
-          </enumerationLiteral>
-          <enumerationLiteral
-            Id="9a38bb18-e87a-407a-af80-c203bd50d86c"
-            name="Parallel">
-            <specification>
-              <literalInteger
-                Id="a65898bd-adc2-4797-926b-78ece8e77aea"
-                name="Integer"
-                value="5" />
-            </specification>
-          </enumerationLiteral>
-          <enumerationLiteral
-            Id="d0b05223-120f-470d-b26a-4790acb90359"
-            name="Perpendicular">
-            <specification>
-              <literalInteger
-                Id="5aebc7ca-9f25-454c-a359-6172a3b9cd49"
-                name="Integer"
-                value="6" />
-            </specification>
-          </enumerationLiteral>
-          <enumerationLiteral
-            Id="b984150a-ff77-42e9-8ffa-bb0a94136322"
-            name="Lock">
-            <description>Fixed position</description>
-            <specification>
-              <literalInteger
-                Id="2dd5cbb0-0bc2-45c7-a013-dca33aacdd60"
-                name="Integer"
-                value="0" />
-            </specification>
-          </enumerationLiteral>
-          <enumerationLiteral
-            Id="a509cbb4-93e0-411b-8ad4-2bc94c631b19"
-            name="Equal">
-            <description>Same length/radius</description>
-            <specification>
-              <literalInteger
-                Id="042f485f-b98e-4e44-bb3c-6ddd0603dbcb"
-                name="Integer"
-                value="7" />
-            </specification>
-          </enumerationLiteral>
-        </ownedLiterals>
-      </enumeration>
+      <packageMoniker
+        Id="df2ff0e4-3d7a-4788-a687-f7dd61b44dc4"
+        LastKnownName="2D"
+        LastKnownLocation="Package_1152.uml" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
