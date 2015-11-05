@@ -34,7 +34,7 @@
           <elementDefinition Id="80f0e2ca-fc39-421e-a135-b7d2780cb4a2" />
         </stereotypeInstanceHasPropertyInstances>
         <stereotypeInstanceHasPropertyInstances Id="5e86bf52-56c5-4fdf-b76e-f4bb126cefc0">
-          <propertyInstance Id="2871e0cb-ce2b-4205-8108-fa911581eb63" name="TemplateFilePath" value="ClassTemplate=C:\PROGRAM FILES\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4|EnumTemplate=C:\PROGRAM FILES\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\EnumTemplate.t4|InterfaceTemplate=C:\PROGRAM FILES\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4|StructTemplate=C:\PROGRAM FILES\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4">
+          <propertyInstance Id="2871e0cb-ce2b-4205-8108-fa911581eb63" name="TemplateFilePath" value="ClassTemplate=D:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4|EnumTemplate=D:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\EnumTemplate.t4|InterfaceTemplate=D:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4|StructTemplate=D:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4">
             <elementDefinition Id="275da2b3-cce4-42fa-b0e8-b8d6a2dd5c3b" />
           </propertyInstance>
           <elementDefinition Id="b5832bfd-6d1f-4438-b879-02377b9ceea2" />
@@ -159,29 +159,6 @@
             </enumeration>
           </packageHasNamedElement>
           <packageHasNamedElement>
-            <class Id="16deae71-2918-4291-971d-d2fd231765e7" name="Rel2D" isAbstract="false" isLeaf="false" isActiveClass="false">
-              <elementDefinition Id="0f6e044a-3dbc-41fd-ba65-893e492f253b" />
-              <targetEnds>
-                <association Id="7e5b1886-d032-4367-b113-48ba1337e1f5" isDerived="false" sourceEndRoleName="" targetEndRoleName="Rel2DType" isLeaf="false" isAbstract="false">
-                  <enumerationMoniker Id="01996b8b-0c07-4c0b-b656-73cfd33221d3" LastKnownName="Rel2DType" />
-                  <relationshipOwnedElementsInternal>
-                    <associationHasOwnedEnds>
-                      <memberEnd Id="d7416d48-8b87-49bd-b11e-70f656e45934" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
-                        <elementDefinition Id="aae11a39-11ae-449d-a743-4eaeed148b89" />
-                      </memberEnd>
-                    </associationHasOwnedEnds>
-                    <associationHasOwnedEnds>
-                      <memberEnd Id="5b3426f1-0428-436f-a135-e563a77fbdde" name="Rel2DType" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                        <elementDefinition Id="d64270bc-f3a1-4313-9b3a-105372443013" />
-                      </memberEnd>
-                    </associationHasOwnedEnds>
-                  </relationshipOwnedElementsInternal>
-                  <elementDefinition Id="6d756101-9bee-43e8-b52e-fe970130eaf7" />
-                </association>
-              </targetEnds>
-            </class>
-          </packageHasNamedElement>
-          <packageHasNamedElement>
             <class Id="1bbe6f65-85ff-411f-9a92-bdc364308da7" name="Sketch" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="8f8c504f-b5a0-4b69-9e16-a9a07de58982" />
               <ownedAttributesInternal>
@@ -197,17 +174,21 @@
           <packageHasNamedElement>
             <class Id="f77df4fe-8943-4657-a360-8ab52f0c51c1" name="Entity2D" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="87d587be-1b5b-4660-be5e-062909503b53" />
+              <suppliersInternal>
+                <dependency Id="3af6d7c9-0490-452e-bbd1-4d51d40c45cf" name="&lt;&lt;uses&gt;&gt;">
+                  <classMoniker Id="8160f557-6711-4dda-8cc3-7beb23b78e62" LastKnownName="RelationsManager" />
+                  <elementDefinition Id="3c1087bc-c1f5-48ef-8ebd-4dd3b49ed761" />
+                </dependency>
+                <interfaceRealization Id="83c4a17a-5692-4a5a-bc98-5a38944d93ef">
+                  <interfaceMoniker Id="49ef7ea1-e8ab-41e8-a7c4-0d63508621ad" LastKnownName="IRelatable" />
+                  <elementDefinition Id="3e74442b-3f40-4595-8319-d2c40184d97b" />
+                </interfaceRealization>
+              </suppliersInternal>
               <ownedAttributesInternal>
                 <property Id="5e5e39ce-df16-45ed-9e08-7088e7808e98" name="Points" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="743421f9-eb47-4cdf-8a67-39bcd403d203" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="5d7117aa-064e-4ce5-aaea-f50d0442a739" LastKnownName="IList&lt;Point&gt;" />
-                  </type_NamedElement>
-                </property>
-                <property Id="d4d34f7e-16b1-455a-9561-85745d45bb8d" name="Rels2D" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="681a22f1-0ee8-422b-b6b3-cbe30766a6cc" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="df9efa73-785e-4614-9d71-ac31b02ad256" LastKnownName="ILIst&lt;Rel2D&gt;" />
                   </type_NamedElement>
                 </property>
               </ownedAttributesInternal>
@@ -233,7 +214,7 @@
                     </operationHasOwnedParameters>
                   </ownedParameters>
                 </operation>
-                <operation Id="84097d5a-2c0d-4982-8c09-243912f56df6" name="SatisfyRels" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                <operation Id="84097d5a-2c0d-4982-8c09-243912f56df6" name="SatisfyRelations" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="2ede8286-74ed-43b6-a65b-b1a04ad88f82" />
                   <ownedParameters>
                     <operationHasOwnedParameters>
@@ -252,23 +233,113 @@
           <packageHasNamedElement>
             <class Id="7320c751-3ce4-4257-8acd-4f32428bfd3b" name="Point2D" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="23b71885-720f-4e1a-ae15-b173212d49b0" />
-              <generalsInternal>
-                <generalization Id="3755b24e-a11e-4eef-931b-8f78dfb8a165" isSubstitutable="false">
-                  <classMoniker Id="f77df4fe-8943-4657-a360-8ab52f0c51c1" LastKnownName="Entity2D" />
-                  <elementDefinition Id="10d5d57b-8487-4e07-8dd1-956129e5630c" />
-                </generalization>
-              </generalsInternal>
+              <suppliersInternal>
+                <interfaceRealization Id="0b1e3dc0-f756-4a3f-b6f2-5700331e0405">
+                  <interfaceMoniker Id="0083a471-6405-4120-baf1-d5435e68bbc6" LastKnownName="IMovable" />
+                  <elementDefinition Id="bd80ec39-2e8c-485e-8726-47b4e5d81912" />
+                </interfaceRealization>
+                <interfaceRealization Id="3caf505f-8efa-4df6-8346-627af2cbdf87">
+                  <interfaceMoniker Id="49ef7ea1-e8ab-41e8-a7c4-0d63508621ad" LastKnownName="IRelatable" />
+                  <elementDefinition Id="f2005386-2797-4cb0-bd60-3c8f521412b2" />
+                </interfaceRealization>
+              </suppliersInternal>
+              <ownedOperationsInternal>
+                <operation Id="352d805b-2c45-4652-a843-1a45d7765fb6" name="moveTo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="b65abd6d-d13c-4615-bdaf-02648c2ddc5a" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="3be345ce-9ca0-4e9d-9abd-4f146b757c4b" name="x" direction="In" isUnique="false">
+                        <elementDefinition Id="bb1fd5a5-3f68-45be-b352-872eb6dd1a2f" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="8a9d4688-b196-47f6-83e3-c2f3d8f11e70" LastKnownName="double" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="35f0ce4d-c5ef-4ebd-bcdb-c2415ab20cec" name="y" direction="In" isUnique="false">
+                        <elementDefinition Id="319de0fa-d9a5-4c55-955e-76d6791a696d" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="8a9d4688-b196-47f6-83e3-c2f3d8f11e70" LastKnownName="double" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
             <class Id="5a09c772-93ed-4fdb-b162-036dc0bf0c96" name="Line2D" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="d7fd3f21-d945-4d43-903a-18f7e0edf8c4" />
+              <suppliersInternal>
+                <interfaceRealization Id="1b63bc53-4fe3-41bb-83dd-24efcc7a4bcf">
+                  <interfaceMoniker Id="e4a2e6b5-a98b-4ca8-8c19-c71bcc1e148a" LastKnownName="IRotatable" />
+                  <elementDefinition Id="09908173-0d74-4120-a232-91f80d79bb07" />
+                </interfaceRealization>
+                <interfaceRealization Id="12d639c8-321e-4526-baaa-a80aae4be337">
+                  <interfaceMoniker Id="0083a471-6405-4120-baf1-d5435e68bbc6" LastKnownName="IMovable" />
+                  <elementDefinition Id="69e661ff-1b13-4be1-9d5e-05b1f21cd191" />
+                </interfaceRealization>
+                <interfaceRealization Id="97f9dfba-65e5-479a-b046-c18d5d592597">
+                  <interfaceMoniker Id="f8291de4-00bd-4e21-a1a3-d235b113797a" LastKnownName="IStretchable" />
+                  <elementDefinition Id="7095fe53-32d8-4eb7-b37e-fbf01ed4cd9b" />
+                </interfaceRealization>
+              </suppliersInternal>
               <generalsInternal>
                 <generalization Id="cadf131c-4873-4c4e-9825-264e2a14981a" isSubstitutable="false">
                   <classMoniker Id="f77df4fe-8943-4657-a360-8ab52f0c51c1" LastKnownName="Entity2D" />
                   <elementDefinition Id="0f98755a-7630-4058-a7fb-c160a25c1148" />
                 </generalization>
               </generalsInternal>
+              <ownedOperationsInternal>
+                <operation Id="b72055d9-a3a9-4b6c-a963-7d016981c3a1" name="moveTo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="59f913df-eaa9-4ce3-b4ee-139e18f45c22" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="c46310cc-f571-4189-b127-c4cfaf8a0448" name="x" direction="In" isUnique="false">
+                        <elementDefinition Id="5d15ba91-5aff-4098-a3f4-651bb8479bbc" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="8a9d4688-b196-47f6-83e3-c2f3d8f11e70" LastKnownName="double" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="aa78420e-7f00-43f4-bb38-8bd9898a0fe9" name="y" direction="In" isUnique="false">
+                        <elementDefinition Id="f84ea6ec-d78d-40e7-9898-c149f5457dc7" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="8a9d4688-b196-47f6-83e3-c2f3d8f11e70" LastKnownName="double" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="bf3652a8-4937-4a51-9572-5848b265db58" name="rotate" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="d8834c95-adc0-4005-8b0b-2e6bcdca14d9" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="6589989c-1853-4bae-bb40-412ae5762c56" name="angle" direction="In" isUnique="false">
+                        <elementDefinition Id="cc95f8c0-abf9-4fd3-8f17-ca5a9d04e8d6" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="8a9d4688-b196-47f6-83e3-c2f3d8f11e70" LastKnownName="double" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="465015b2-a843-4f21-9a21-6d591ad5cc41" name="stretch" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="eacd33c4-f1bd-4038-a62e-21eea318176b" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="b7455a2d-0dcb-49e7-9377-8b83648d8879" name="newLength" direction="In" isUnique="false">
+                        <elementDefinition Id="a7444557-a1b5-48f2-8f1b-bc5217791ef1" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="8a9d4688-b196-47f6-83e3-c2f3d8f11e70" LastKnownName="double" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
@@ -302,17 +373,504 @@
               </ownedLiterals>
             </enumeration>
           </packageHasNamedElement>
+          <packageHasNamedElement>
+            <package Id="a09de4f4-e355-41f8-a3bd-71819d927c8e" name="RelatableTypes">
+              <elementDefinition Id="dea456aa-07c6-4c5e-994f-0bf2f494afb8" />
+              <packagedElements>
+                <packageHasNamedElement>
+                  <Interface Id="0083a471-6405-4120-baf1-d5435e68bbc6" name="IMovable" isAbstract="false" isLeaf="false">
+                    <elementDefinition Id="68e65384-842e-40fa-8052-ea0b7274d73b" />
+                    <ownedOperations>
+                      <operation Id="331a1f8b-9e8e-49d3-af34-ca8d3e201ee2" name="moveTo" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="c99f5098-45ce-4271-a7be-099d0230f75e" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="9597c46f-7409-447a-bc43-9461be69f6e6" name="x" direction="In" isUnique="false">
+                              <elementDefinition Id="d8a5c5ff-622f-42e0-bac5-9173ec155173" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="8a9d4688-b196-47f6-83e3-c2f3d8f11e70" LastKnownName="double" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="dae0020f-3580-48a2-a5f7-f3fad7693fbd" name="y" direction="In" isUnique="false">
+                              <elementDefinition Id="3ba68ddb-d772-4824-b126-0f913782fd35" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="8a9d4688-b196-47f6-83e3-c2f3d8f11e70" LastKnownName="double" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperations>
+                  </Interface>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <Interface Id="e4a2e6b5-a98b-4ca8-8c19-c71bcc1e148a" name="IRotatable" isAbstract="false" isLeaf="false">
+                    <elementDefinition Id="713f6869-b1ad-48ec-905e-99cc427efdfa" />
+                    <ownedOperations>
+                      <operation Id="6c288d23-5959-47da-9d9c-21c3d5679772" name="rotate" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="a4d61a27-5860-48c7-b114-77d8204471f8" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="af35a5d5-4897-4726-b323-fd8e54f86f37" name="angle" direction="In" isUnique="false">
+                              <elementDefinition Id="b283b435-82b9-4312-8556-9eb72e55e8f8" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="8a9d4688-b196-47f6-83e3-c2f3d8f11e70" LastKnownName="double" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperations>
+                  </Interface>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <Interface Id="f8291de4-00bd-4e21-a1a3-d235b113797a" name="IStretchable" isAbstract="false" isLeaf="false">
+                    <elementDefinition Id="881bb185-e7aa-4285-84e7-838b47dc9187" />
+                    <ownedOperations>
+                      <operation Id="efcd3dc3-6959-4bbe-bb73-4c99a2abb27e" name="stretch" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="99c4d6fa-b7f4-41ea-bf9e-f3f92b641f36" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="d03244e8-3be7-4e2b-aac0-f08cc6e25d29" name="newLength" direction="In" isUnique="false">
+                              <elementDefinition Id="618cfd4c-bf8a-4d0c-b60f-521e288fc38d" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="8a9d4688-b196-47f6-83e3-c2f3d8f11e70" LastKnownName="double" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperations>
+                  </Interface>
+                </packageHasNamedElement>
+              </packagedElements>
+            </package>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="8160f557-6711-4dda-8cc3-7beb23b78e62" name="RelationsManager" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="5d25954f-ba72-4b12-b4c6-5c3beb0d0b3a" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <Interface Id="9fe0ce6e-2096-4631-8fdd-a557f13d3ca2" name="IRelation2D" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="749f206e-0873-4734-b98a-3bead6d23bd6" />
+              <ownedOperations>
+                <operation Id="6d480085-10fa-4b70-950e-1d24228538c1" name="Satisfy" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="1484d931-25fd-4212-a1f3-2d464b56b4fc" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="27de1531-2da2-4511-aeb6-b55f8eeb2141" direction="Return">
+                        <elementDefinition Id="924f9b05-1009-4200-abf0-bb88e05d3089" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="ae57d7fe-29b7-4375-8cb5-100fee137714" LastKnownName="bool" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperations>
+            </Interface>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <package Id="adf33b69-710e-436f-a58c-71f86a8a93f1" name="Relations2D">
+              <elementDefinition Id="10ded819-b748-408a-87cc-0ea8fbf40935" />
+              <packagedElements>
+                <packageHasNamedElement>
+                  <class Id="90a2989e-9f57-4acb-a274-8e8809da76d9" name="Lock" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="a946a3ce-05ca-4153-be06-4b850b5bd0e1" />
+                    <suppliersInternal>
+                      <interfaceRealization Id="10c4ff62-32d3-4dd4-8c42-bf7963c871eb">
+                        <interfaceMoniker Id="9fe0ce6e-2096-4631-8fdd-a557f13d3ca2" LastKnownName="IRelation2D" />
+                        <elementDefinition Id="02215e5a-c4bf-4464-a108-6cfa3257822c" />
+                      </interfaceRealization>
+                    </suppliersInternal>
+                    <targetEnds>
+                      <association Id="bd9e0ebd-aa40-40f5-8c49-806e73f98472" isDerived="false" sourceEndRoleName="Lock" targetEndRoleName="IMovable" isLeaf="false" isAbstract="false">
+                        <interfaceMoniker Id="0083a471-6405-4120-baf1-d5435e68bbc6" LastKnownName="IMovable" />
+                        <relationshipOwnedElementsInternal>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="50b08aa1-9303-48cd-b6a5-64411880e216" name="Lock" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                              <elementDefinition Id="dca899df-bc17-4c9d-8b28-43e96d441087" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="ac419c76-0179-4841-a2ab-a3bfd8824200" name="IMovable" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                              <elementDefinition Id="d593a80a-d96f-4021-bad9-c518412e606b" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                        </relationshipOwnedElementsInternal>
+                        <elementDefinition Id="81ace3b2-d5ac-4e32-9d85-08596a8c45e6" />
+                      </association>
+                    </targetEnds>
+                    <ownedOperationsInternal>
+                      <operation Id="1bf31352-be2e-465d-b648-25b41ca28eda" name="Satisfy" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="1a185dfc-09a2-476c-8cea-52adcf1fcf0d" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="dfc17745-d3f0-4184-9f2b-d25ddb4100ca" direction="Return">
+                              <elementDefinition Id="5e30b95c-4e7a-40bb-82b2-96224f5e9be3" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="7c19f1cb-de03-4e26-86be-4dca9ad0d29d" LastKnownName="bool" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperationsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="2f30acc2-e70c-4409-92e8-c19f5f92dde7" name="Connect" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="7031746a-0ae6-42eb-a47b-46fa9895d6af" />
+                    <suppliersInternal>
+                      <interfaceRealization Id="f2e66543-4e43-4dab-966b-96ede8fb2a1f">
+                        <interfaceMoniker Id="9fe0ce6e-2096-4631-8fdd-a557f13d3ca2" LastKnownName="IRelation2D" />
+                        <elementDefinition Id="86ae2e36-6db4-4d57-a217-6aaa9636b596" />
+                      </interfaceRealization>
+                    </suppliersInternal>
+                    <targetEnds>
+                      <association Id="4d930941-c6eb-471f-820d-99b547295a26" isDerived="false" sourceEndRoleName="Connect" targetEndRoleName="IMovable" isLeaf="false" isAbstract="false">
+                        <interfaceMoniker Id="0083a471-6405-4120-baf1-d5435e68bbc6" LastKnownName="IMovable" />
+                        <relationshipOwnedElementsInternal>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="e8a1fffa-52f4-4a52-ae7c-947b34473665" name="Connect" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                              <elementDefinition Id="11fb7dcb-ebed-41b3-8875-d60bed0678c9" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="7b532fed-5520-4c5b-ad77-76719f052302" name="IMovable" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                              <elementDefinition Id="ad4d6941-529f-448b-a56f-9933693ecf90" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                        </relationshipOwnedElementsInternal>
+                        <elementDefinition Id="9e96eda3-e7d2-4b99-99d9-140873829746" />
+                      </association>
+                    </targetEnds>
+                    <ownedOperationsInternal>
+                      <operation Id="a9fb507b-dad0-4b7d-a1d6-dec98ee2d58c" name="Satisfy" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="80df520e-4e86-4f4f-9e04-d53cb9ff9fd7" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="6f4c9897-f7bd-4b39-8fb0-ca7a20862ab8" direction="Return">
+                              <elementDefinition Id="dead0148-adc5-47b2-ac24-c2151249fed6" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="7c19f1cb-de03-4e26-86be-4dca9ad0d29d" LastKnownName="bool" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperationsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="0382fe8f-746d-4066-bbbb-f041c9e146a5" name="Horizontal" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="259bb123-832e-45ed-b1ff-fe29457ffa98" />
+                    <suppliersInternal>
+                      <interfaceRealization Id="510b664e-c965-4737-b39c-2d7169a819f3">
+                        <interfaceMoniker Id="9fe0ce6e-2096-4631-8fdd-a557f13d3ca2" LastKnownName="IRelation2D" />
+                        <elementDefinition Id="6f0cef30-f190-4758-b7ea-7f2f5a871e9f" />
+                      </interfaceRealization>
+                    </suppliersInternal>
+                    <targetEnds>
+                      <association Id="26894b8e-7c7c-4571-b262-6d5c62ce2b1d" isDerived="false" sourceEndRoleName="Horizontal" targetEndRoleName="IRotatable" isLeaf="false" isAbstract="false">
+                        <interfaceMoniker Id="e4a2e6b5-a98b-4ca8-8c19-c71bcc1e148a" LastKnownName="IRotatable" />
+                        <relationshipOwnedElementsInternal>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="9e0761b5-8c42-4bf8-bf93-3aca3a60446a" name="Horizontal" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                              <elementDefinition Id="084251de-4ced-4d29-848a-4dc10f5c1c77" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="06d9c0ee-820e-45da-9bcb-339fdf02bf23" name="IRotatable" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                              <elementDefinition Id="83a210fd-a17d-4c2e-8b63-c0f0fadf5733" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                        </relationshipOwnedElementsInternal>
+                        <elementDefinition Id="7a7a8bd0-7807-4044-bc78-614dbfa773f9" />
+                      </association>
+                    </targetEnds>
+                    <ownedOperationsInternal>
+                      <operation Id="fff98ce2-0873-4c40-821b-5046a33c9118" name="Satisfy" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="48d29b89-c44b-4f5a-9f7f-52d037d3297d" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="0991cde5-b65f-42bf-9b75-19755660a65c" direction="Return">
+                              <elementDefinition Id="3f06a833-2c33-454a-a7e9-82dad93233c2" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="7c19f1cb-de03-4e26-86be-4dca9ad0d29d" LastKnownName="bool" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperationsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="4bbfcc74-91f4-4a9e-8a91-8361aad874c7" name="Vertical" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="32ed7762-64b5-463a-89c6-663383622896" />
+                    <suppliersInternal>
+                      <interfaceRealization Id="ae709bc6-eb79-4fe2-8c40-4242ea966dca">
+                        <interfaceMoniker Id="9fe0ce6e-2096-4631-8fdd-a557f13d3ca2" LastKnownName="IRelation2D" />
+                        <elementDefinition Id="0283da90-b8d4-45b4-88f8-142fbe91aa86" />
+                      </interfaceRealization>
+                    </suppliersInternal>
+                    <targetEnds>
+                      <association Id="551c65fd-6cac-4aff-97d1-6ea8406a410f" isDerived="false" sourceEndRoleName="Vertical" targetEndRoleName="IRotatable" isLeaf="false" isAbstract="false">
+                        <interfaceMoniker Id="e4a2e6b5-a98b-4ca8-8c19-c71bcc1e148a" LastKnownName="IRotatable" />
+                        <relationshipOwnedElementsInternal>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="1a47f218-75c5-45b4-9881-c2bb380c9c58" name="Vertical" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                              <elementDefinition Id="bca0c022-deb4-42a9-a17b-c5320a88c21b" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="8cbad024-516a-4d61-a6a8-a3b2285ae94f" name="IRotatable" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                              <elementDefinition Id="280291ac-8a54-4dd3-bff4-4638efaf5491" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                        </relationshipOwnedElementsInternal>
+                        <elementDefinition Id="504f50f2-0cef-4ad0-80f4-68e790b8a85a" />
+                      </association>
+                    </targetEnds>
+                    <ownedOperationsInternal>
+                      <operation Id="6445252f-dc03-4cbd-b503-992c7b25a9ba" name="Satisfy" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="b0307923-43df-441b-95d0-6cddde8763c7" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="2fed6d86-2423-4926-96a4-6a28bd3b9ee2" direction="Return">
+                              <elementDefinition Id="7eabe9fa-cf25-4b2b-a01d-20ebaa7acc8b" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="7c19f1cb-de03-4e26-86be-4dca9ad0d29d" LastKnownName="bool" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperationsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="9128c3aa-e8b4-4af2-8bad-b7e5350ac49b" name="Collinear" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="bbfc0451-36c0-4dd6-aced-8d26fd224ab2" />
+                    <suppliersInternal>
+                      <interfaceRealization Id="9505c58b-e998-4660-9ccc-d2a07e632676">
+                        <interfaceMoniker Id="9fe0ce6e-2096-4631-8fdd-a557f13d3ca2" LastKnownName="IRelation2D" />
+                        <elementDefinition Id="f2b65b0b-b451-4401-a1f4-f3f2778a43e1" />
+                      </interfaceRealization>
+                    </suppliersInternal>
+                    <targetEnds>
+                      <association Id="63c3e2b8-934b-457f-bb2f-793da1ff6d55" isDerived="false" sourceEndRoleName="Collinear" targetEndRoleName="IRotatable" isLeaf="false" isAbstract="false">
+                        <interfaceMoniker Id="e4a2e6b5-a98b-4ca8-8c19-c71bcc1e148a" LastKnownName="IRotatable" />
+                        <relationshipOwnedElementsInternal>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="2a1da30d-ea04-41f9-8d14-70492b089b8d" name="Collinear" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                              <elementDefinition Id="27f11060-b40f-451e-8967-fdcebfd1f32c" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="304078d8-a705-4175-8e1f-dd674b2d3458" name="IRotatable" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                              <elementDefinition Id="57bbed1f-edad-494f-a060-9925c3701a5e" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                        </relationshipOwnedElementsInternal>
+                        <elementDefinition Id="bc14123a-912e-4b6e-8d46-740199adf1ca" />
+                      </association>
+                    </targetEnds>
+                    <ownedOperationsInternal>
+                      <operation Id="721e0d82-37a4-4b4e-912b-d4f74fdbc75e" name="Satisfy" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="6ce19901-7db6-4be2-b1ce-fdd97ed52a53" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="fb11e6ad-3973-4d8a-95eb-23c661901085" direction="Return">
+                              <elementDefinition Id="414d89bb-e930-4c9d-86a4-26522cfc8c9b" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="7c19f1cb-de03-4e26-86be-4dca9ad0d29d" LastKnownName="bool" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperationsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="8c3141e3-c95a-4a81-8916-a997e8f4e183" name="Parallel" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="18821ce2-beeb-4855-8ee0-2065f1a49a2b" />
+                    <suppliersInternal>
+                      <interfaceRealization Id="b062fe1f-69e7-4639-90f5-dc731f8e90a9">
+                        <interfaceMoniker Id="9fe0ce6e-2096-4631-8fdd-a557f13d3ca2" LastKnownName="IRelation2D" />
+                        <elementDefinition Id="155611a8-ed2a-444c-adf7-e612b1270b40" />
+                      </interfaceRealization>
+                    </suppliersInternal>
+                    <targetEnds>
+                      <association Id="c94be827-16c5-4855-9e12-65da58d85af0" isDerived="false" sourceEndRoleName="Parallel" targetEndRoleName="IRotatable" isLeaf="false" isAbstract="false">
+                        <interfaceMoniker Id="e4a2e6b5-a98b-4ca8-8c19-c71bcc1e148a" LastKnownName="IRotatable" />
+                        <relationshipOwnedElementsInternal>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="6ad462fc-52d1-4632-9a59-d55bd1f4f028" name="Parallel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                              <elementDefinition Id="d59a2b3c-c32c-4c3c-b11b-1022918bcbd9" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="851b7c0e-bb4c-44de-84b3-9ebb9c211a3c" name="IRotatable" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                              <elementDefinition Id="df763ae8-65f2-41fc-a999-893ac5b67344" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                        </relationshipOwnedElementsInternal>
+                        <elementDefinition Id="0b52d380-09b4-4fa3-bfeb-d9baa6dd8062" />
+                      </association>
+                    </targetEnds>
+                    <ownedOperationsInternal>
+                      <operation Id="e6b73abc-f089-40e1-87c7-04a3144caa57" name="Satisfy" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="9d129820-6130-4331-8853-7bf7d912e3d6" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="a8f6f161-0970-4ddc-afb0-f9ec143594d5" direction="Return">
+                              <elementDefinition Id="389012bd-2b1a-4e8e-b8de-2e6429397797" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="7c19f1cb-de03-4e26-86be-4dca9ad0d29d" LastKnownName="bool" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperationsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="b262726c-7e8e-4b2c-90b9-b44eb7f45129" name="Perpendicular" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="5c445c16-2b0d-46a9-abd9-05dfcc33f38f" />
+                    <suppliersInternal>
+                      <interfaceRealization Id="68a96266-8b0d-4b64-8ba8-c20788025ab9">
+                        <interfaceMoniker Id="9fe0ce6e-2096-4631-8fdd-a557f13d3ca2" LastKnownName="IRelation2D" />
+                        <elementDefinition Id="06cafd73-8e2e-4029-ba9f-f26a47a26268" />
+                      </interfaceRealization>
+                    </suppliersInternal>
+                    <targetEnds>
+                      <association Id="d9187c05-4ab9-4efb-ba3c-e06be601a562" isDerived="false" sourceEndRoleName="Perpendicular" targetEndRoleName="IRotatable" isLeaf="false" isAbstract="false">
+                        <interfaceMoniker Id="e4a2e6b5-a98b-4ca8-8c19-c71bcc1e148a" LastKnownName="IRotatable" />
+                        <relationshipOwnedElementsInternal>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="2fd99547-829f-4dc6-8428-b8497c02bb2a" name="Perpendicular" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                              <elementDefinition Id="52b3dee2-c036-48c7-9da1-56fdc80bcafc" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="41ef9569-c6c4-4224-b971-b825715e737c" name="IRotatable" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                              <elementDefinition Id="5ded0cca-7b13-4745-bff2-8cab8612fbff" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                        </relationshipOwnedElementsInternal>
+                        <elementDefinition Id="1f691eba-6bf4-4525-9540-356a9c339e84" />
+                      </association>
+                    </targetEnds>
+                    <ownedOperationsInternal>
+                      <operation Id="4db5a18c-5b2c-48c8-9b20-30a60ccf8320" name="Satisfy" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="d20a7dc4-77e4-4baf-be1f-b298c525f1d4" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="3f668b9e-1084-4d41-8177-defcff675024" direction="Return">
+                              <elementDefinition Id="3565495c-835b-4319-a2aa-e47623b32b89" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="7c19f1cb-de03-4e26-86be-4dca9ad0d29d" LastKnownName="bool" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperationsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="20139de5-28f5-40d2-918b-65c3455ed882" name="Equal" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="577d3b04-d81d-42e1-a4de-449a0718434b" />
+                    <suppliersInternal>
+                      <interfaceRealization Id="d394acc8-59bd-4d5b-babf-a6bf68ec3e23">
+                        <interfaceMoniker Id="9fe0ce6e-2096-4631-8fdd-a557f13d3ca2" LastKnownName="IRelation2D" />
+                        <elementDefinition Id="09b8eaac-3d0e-4ae5-812d-78ea8b1a78cd" />
+                      </interfaceRealization>
+                    </suppliersInternal>
+                    <targetEnds>
+                      <association Id="7c4ac181-d40e-44cb-9123-3f0b0e3322ab" isDerived="false" sourceEndRoleName="Equal" targetEndRoleName="IStretchable" isLeaf="false" isAbstract="false">
+                        <interfaceMoniker Id="f8291de4-00bd-4e21-a1a3-d235b113797a" LastKnownName="IStretchable" />
+                        <relationshipOwnedElementsInternal>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="c3e92b7e-a244-469c-a6a8-73fd2d323143" name="Equal" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                              <elementDefinition Id="10b71a78-3c44-4ce9-b79c-4bc5ca8c851f" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="f770997b-67da-4d31-aeb1-a70f7dad2743" name="IStretchable" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                              <elementDefinition Id="ce0d5620-dd95-497d-bd56-4bd4fd9743cd" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                        </relationshipOwnedElementsInternal>
+                        <elementDefinition Id="68546a5a-1494-49e7-b0ea-1d579e3b8926" />
+                      </association>
+                    </targetEnds>
+                    <ownedOperationsInternal>
+                      <operation Id="06045bfd-79c7-4ec6-897f-0c0e2eea2539" name="Satisfy" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="5f5fce4d-f038-4c73-a5b5-774c3baee413" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="62e2bd56-f6e0-43e4-9d27-b66853c9da93" direction="Return">
+                              <elementDefinition Id="2ecc096a-f18f-4961-8707-1557f5b6161b" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="7c19f1cb-de03-4e26-86be-4dca9ad0d29d" LastKnownName="bool" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperationsInternal>
+                  </class>
+                </packageHasNamedElement>
+              </packagedElements>
+            </package>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <Interface Id="49ef7ea1-e8ab-41e8-a7c4-0d63508621ad" name="IRelatable" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="bb539424-ff9b-4f3f-a830-44ddc194d1c5" />
+              <targetEnds>
+                <association Id="ce5c58df-8371-42b4-aecb-03132b137012" isDerived="false" sourceEndRoleName="IRelatable" targetEndRoleName="IRelation2D" isLeaf="false" isAbstract="false">
+                  <interfaceMoniker Id="9fe0ce6e-2096-4631-8fdd-a557f13d3ca2" LastKnownName="IRelation2D" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="30309384-4c84-448f-9fdc-267e9fb61266" name="IRelatable" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="93e0cc19-8bc5-4c8b-9102-2452fa3e9c49" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="c348158a-56ba-481c-ae6f-10913428a62c" name="IRelation2D" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <lowerValueInternal>
+                          <literalString Id="f3519845-76b0-4378-b132-2912b979d878" name="Lower" value="*">
+                            <elementDefinition Id="8e1f49eb-0c51-4dc2-aafb-931e6320e301" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="d689178c-9674-47d9-ae01-157cc5e9ea84" name="Upper" value="*">
+                            <elementDefinition Id="8d7284a1-e4e2-4829-a49c-192b16ea1d22" />
+                          </literalString>
+                        </upperValueInternal>
+                        <elementDefinition Id="b1987613-8e60-4d52-899d-dd9f3c874de3" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="c406850e-1f87-4cc5-a45e-758c3d525edb" />
+                </association>
+              </targetEnds>
+            </Interface>
+          </packageHasNamedElement>
         </packagedElements>
       </package>
     </logicalClassDesignerModelHasPackages>
     <packageHasNamedElement>
       <referencedType Id="5d7117aa-064e-4ce5-aaea-f50d0442a739" name="IList&lt;Point&gt;" isAbstract="false" isLeaf="false" cachedFullName="IList&lt;Point&gt;">
         <elementDefinition Id="05d63692-b72d-4e8a-af9e-af091190880d" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="df9efa73-785e-4614-9d71-ac31b02ad256" name="ILIst&lt;Rel2D&gt;" isAbstract="false" isLeaf="false" cachedFullName="ILIst&lt;Rel2D&gt;">
-        <elementDefinition Id="85c69e69-933c-46de-8fe9-3bda2c5bd72e" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -327,6 +885,16 @@
     </packageHasNamedElement>
     <packageHasNamedElement>
       <referencedType Id="7c19f1cb-de03-4e26-86be-4dca9ad0d29d" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
+        <elementDefinition Id="821980d7-c50c-4378-9ae4-894c6e83deac" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="8a9d4688-b196-47f6-83e3-c2f3d8f11e70" name="double" isAbstract="false" isLeaf="false" cachedFullName="double">
+        <elementDefinition Id="07c652a9-8350-42ad-88db-c008c2bc1572" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ae57d7fe-29b7-4375-8cb5-100fee137714" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
         <elementDefinition Id="821980d7-c50c-4378-9ae4-894c6e83deac" />
       </referencedType>
     </packageHasNamedElement>

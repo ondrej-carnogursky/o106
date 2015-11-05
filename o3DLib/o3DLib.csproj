@@ -42,8 +42,26 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Sketch\Entity2D.cs" />
+    <Compile Include="Sketch\RelatableTypes\IMovable.cs" />
+    <Compile Include="Sketch\RelatableTypes\IRotatable.cs" />
+    <Compile Include="Sketch\RelatableTypes\IStretchable.cs" />
+    <Compile Include="Sketch\IRelatable.cs" />
+    <Compile Include="Sketch\IRelation2D.cs" />
+    <Compile Include="Sketch\KeyPointType.cs" />
+    <Compile Include="Sketch\Point2D.cs" />
+    <Compile Include="Sketch\Rel2DType.cs" />
+    <Compile Include="Sketch\Relations2D\Equal.cs" />
+    <Compile Include="Sketch\RelationsManager.cs" />
     <Compile Include="Extensions\sysExt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sketch\Relations2D\Collinear.cs" />
+    <Compile Include="Sketch\Relations2D\Connect.cs" />
+    <Compile Include="Sketch\Relations2D\Horizontal.cs" />
+    <Compile Include="Sketch\Relations2D\Lock.cs" />
+    <Compile Include="Sketch\Relations2D\Parallel.cs" />
+    <Compile Include="Sketch\Relations2D\Perpendicular.cs" />
+    <Compile Include="Sketch\Relations2D\Vertical.cs" />
     <Compile Include="Viewport\RefPlane.cs" />
     <Compile Include="Viewport\Viewport3D.cs" />
   </ItemGroup>
@@ -54,6 +72,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagrams\RefPlane.cd" />
   </ItemGroup>
   <ItemGroup />
