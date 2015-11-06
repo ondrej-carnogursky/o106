@@ -4,19 +4,19 @@
 //     Changes to this file will be lost if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Sketching.Relations2D
+namespace Sketching
 {
-	using Sketching;
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Text;
 
-	public class Perpendicular : Relation2D, IRelation2D
+	public class Sketch
 	{
-		public override bool Satisfy()
+		public virtual o3DLib.RefPlane RefPlane
 		{
-			throw new System.NotImplementedException();
+			get;
+			set;
 		}
 
 	}

@@ -12,12 +12,9 @@ namespace Sketching.Relations2D
 	using System.Linq;
 	using System.Text;
 
-	public class Perpendicular : Relation2D, IRelation2D
+	public interface IRelation2D 
 	{
-		public override bool Satisfy()
-		{
-			throw new System.NotImplementedException();
-		}
+		bool Satisfy();
 
 	}
 }
