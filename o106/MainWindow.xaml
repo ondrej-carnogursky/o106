@@ -12,7 +12,7 @@
         <o3d:Viewport3D x:Name="viewport">
             <hx:DefaultLights></hx:DefaultLights>
             <!--<o3d:RefPlane Plane="{Binding ConstructionPlane,ElementName=viewport}" Size="1000"></o3d:RefPlane>-->
-            <hx:SphereVisual3D Radius="100"></hx:SphereVisual3D>
+            <hx:SphereVisual3D Radius="50"></hx:SphereVisual3D>
             <o3d:RefPlane XAxis="1,0,0" ReverseSide="False">
                 <o3d:RefPlane.Plane>
                     <hx:Plane3D Position="0,0,0" Normal="0,0,1"></hx:Plane3D>
