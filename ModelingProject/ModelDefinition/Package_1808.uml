@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="10ded819-b748-408a-87cc-0ea8fbf40935"
   name="Relations2D" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -27,6 +27,14 @@
             <classMoniker
               Id="fd520ab9-af03-4bde-92ec-ffb895d448f9"
               LastKnownName="Unary"
+              LastKnownLocation="Package_1808.uml" />
+          </generalization>
+          <generalization
+            Id="9a54ea5d-f013-4c21-a2e7-7e69dbb0e229"
+            isSubstitutable="false">
+            <classMoniker
+              Id="6425f226-eb04-4daa-be5b-03cad68e8f45"
+              LastKnownName="Relation2D"
               LastKnownLocation="Package_1808.uml" />
           </generalization>
         </generalsInternal>
@@ -159,6 +167,14 @@
               LastKnownName="Binary"
               LastKnownLocation="Package_1808.uml" />
           </generalization>
+          <generalization
+            Id="cec7bcdb-5613-4e21-8d1a-f116aa367fa9"
+            isSubstitutable="false">
+            <classMoniker
+              Id="6425f226-eb04-4daa-be5b-03cad68e8f45"
+              LastKnownName="Relation2D"
+              LastKnownLocation="Package_1808.uml" />
+          </generalization>
         </generalsInternal>
         <targetEnds>
           <association
@@ -251,6 +267,14 @@
             <classMoniker
               Id="fd520ab9-af03-4bde-92ec-ffb895d448f9"
               LastKnownName="Unary"
+              LastKnownLocation="Package_1808.uml" />
+          </generalization>
+          <generalization
+            Id="fe110057-19da-4f8a-894d-93e8528e659f"
+            isSubstitutable="false">
+            <classMoniker
+              Id="6425f226-eb04-4daa-be5b-03cad68e8f45"
+              LastKnownName="Relation2D"
               LastKnownLocation="Package_1808.uml" />
           </generalization>
         </generalsInternal>
@@ -347,6 +371,14 @@
               LastKnownName="Unary"
               LastKnownLocation="Package_1808.uml" />
           </generalization>
+          <generalization
+            Id="1228cde5-f3a2-4c16-8d6b-36170fa0e8e1"
+            isSubstitutable="false">
+            <classMoniker
+              Id="6425f226-eb04-4daa-be5b-03cad68e8f45"
+              LastKnownName="Relation2D"
+              LastKnownLocation="Package_1808.uml" />
+          </generalization>
         </generalsInternal>
         <targetEnds>
           <association
@@ -432,6 +464,16 @@
               LastKnownLocation="Package_1152.uml" />
           </interfaceRealization>
         </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="6183e233-2e40-444e-8764-e61aa49fed07"
+            isSubstitutable="false">
+            <classMoniker
+              Id="6425f226-eb04-4daa-be5b-03cad68e8f45"
+              LastKnownName="Relation2D"
+              LastKnownLocation="Package_1808.uml" />
+          </generalization>
+        </generalsInternal>
         <targetEnds>
           <association
             Id="bc14123a-912e-4b6e-8d46-740199adf1ca"
@@ -516,6 +558,16 @@
               LastKnownLocation="Package_1152.uml" />
           </interfaceRealization>
         </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="7d8f8bf9-d942-4a82-b3ea-fa4f3018ded6"
+            isSubstitutable="false">
+            <classMoniker
+              Id="6425f226-eb04-4daa-be5b-03cad68e8f45"
+              LastKnownName="Relation2D"
+              LastKnownLocation="Package_1808.uml" />
+          </generalization>
+        </generalsInternal>
         <targetEnds>
           <association
             Id="0b52d380-09b4-4fa3-bfeb-d9baa6dd8062"
@@ -600,6 +652,16 @@
               LastKnownLocation="Package_1152.uml" />
           </interfaceRealization>
         </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="4df5c55a-d300-4c93-997f-bf70a1a4aed3"
+            isSubstitutable="false">
+            <classMoniker
+              Id="6425f226-eb04-4daa-be5b-03cad68e8f45"
+              LastKnownName="Relation2D"
+              LastKnownLocation="Package_1808.uml" />
+          </generalization>
+        </generalsInternal>
         <targetEnds>
           <association
             Id="1f691eba-6bf4-4525-9540-356a9c339e84"
@@ -684,6 +746,16 @@
               LastKnownLocation="Package_1152.uml" />
           </interfaceRealization>
         </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="65d65e97-c1f8-4407-8568-8067f47bac7d"
+            isSubstitutable="false">
+            <classMoniker
+              Id="6425f226-eb04-4daa-be5b-03cad68e8f45"
+              LastKnownName="Relation2D"
+              LastKnownLocation="Package_1808.uml" />
+          </generalization>
+        </generalsInternal>
         <targetEnds>
           <association
             Id="68546a5a-1494-49e7-b0ea-1d579e3b8926"
@@ -751,6 +823,78 @@
           </operation>
         </ownedOperationsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6425f226-eb04-4daa-be5b-03cad68e8f45"
+        name="Relation2D"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="49e673b1-1aac-45cf-a131-ba0d732f2458">
+            <interfaceMoniker
+              Id="4be29e47-11c8-4040-86b1-7f1efcc547b0"
+              LastKnownName="IRelation2D"
+              LastKnownLocation="Package_1808.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="51c6b9f7-b535-44a1-95b8-5b3bad0ead47"
+            name="Parent"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="6425f226-eb04-4daa-be5b-03cad68e8f45"
+                LastKnownName="Relation2D"
+                LastKnownLocation="Package_1808.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="4be29e47-11c8-4040-86b1-7f1efcc547b0"
+        name="IRelation2D"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="68184ad3-71b9-4249-8c94-a507806278b1"
+            name="Satisfy"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="620d2b4c-fa42-4c93-8eb1-4b28f14e65fb"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="821980d7-c50c-4378-9ae4-894c6e83deac"
+                      LastKnownName="bool"
+                      LastKnownLocation="Package_1152.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
     </packageHasNamedElement>
   </packagedElements>
 </package>

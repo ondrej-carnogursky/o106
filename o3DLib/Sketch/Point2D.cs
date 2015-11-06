@@ -10,6 +10,12 @@ namespace o3DLib.Sketch
     {
 
 
+        public Point2D(double x, double y)
+        {
+            this.X = x;
+            this.Y = y;
+        }
+
 
         public IList<IRelation2D> Relations { get; set; } = new List<IRelation2D>();
 
@@ -42,6 +48,12 @@ namespace o3DLib.Sketch
         {
             this.X = x;
             this.Y = y;
+        }
+
+        public IList<Point2D> getRelatingPoints()
+        {
+            IList<Point2D> relatingPoints = new List<Point2D>() { this };
+            return relatingPoints;
         }
     }
 }

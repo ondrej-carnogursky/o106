@@ -11,5 +11,8 @@ namespace o3DLib.Sketch
 
         IList<IRelation2D> Relations { get; set; }
 
+        IList<Point2D> getRelatingPoints();
+
+
     }
 }

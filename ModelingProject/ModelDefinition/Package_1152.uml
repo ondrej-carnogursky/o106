@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="df2ff0e4-3d7a-4788-a687-f7dd61b44dc4"
-  name="2D" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  name="z" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
   <packagedElements>
     <packageHasNamedElement>
       <enumeration
@@ -200,6 +200,14 @@
               LastKnownName="RelationsManager"
               LastKnownLocation="Package_1152.uml" />
           </dependency>
+          <dependency
+            Id="370f3592-7e47-411b-a8a0-56a9e41bf7ab"
+            name="&lt;&lt;uses&gt;&gt;">
+            <enumerationMoniker
+              Id="18ded0fa-3c24-4bea-a7ac-c49eeb87e33b"
+              LastKnownName="KeyPointType"
+              LastKnownLocation="Package_1152.uml" />
+          </dependency>
         </suppliersInternal>
         <targetEnds>
           <association
@@ -268,8 +276,8 @@
             isComposite="false">
             <type_NamedElement>
               <undefinedTypeMoniker
-                Id="05d63692-b72d-4e8a-af9e-af091190880d"
-                LastKnownName="IList&lt;Point&gt;"
+                Id="7af83b35-369b-4a95-a99c-dc55e6a35ba5"
+                LastKnownName="IList&lt;Point2D&gt;"
                 LastKnownLocation="Package_1152.uml" />
             </type_NamedElement>
           </property>
@@ -337,6 +345,30 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="b075353c-2d54-4259-9b57-731d5e8b1120"
+            name="GetRelatingPoints"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5068c64e-60b0-4e5e-ac8f-c7fe4c3a500d"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7af83b35-369b-4a95-a99c-dc55e6a35ba5"
+                      LastKnownName="IList&lt;Point2D&gt;"
+                      LastKnownLocation="Package_1152.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -387,6 +419,26 @@
               LastKnownLocation="Package_1152.uml" />
           </interfaceRealization>
         </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="6f40e0cb-0f18-47a6-bb54-a4c54936f40c"
+            name="IsDriven"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="821980d7-c50c-4378-9ae4-894c6e83deac"
+                LastKnownName="bool"
+                LastKnownLocation="Package_1152.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="b65abd6d-d13c-4615-bdaf-02648c2ddc5a"
@@ -421,6 +473,30 @@
                     <undefinedTypeMoniker
                       Id="07c652a9-8350-42ad-88db-c008c2bc1572"
                       LastKnownName="double"
+                      LastKnownLocation="Package_1152.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="344f0e6d-b1fc-4886-90a4-dd7a52066f64"
+            name="GetRelatingPoints"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9bb027db-cda8-48d2-9808-425095c6a9f7"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7af83b35-369b-4a95-a99c-dc55e6a35ba5"
+                      LastKnownName="IList&lt;Point2D&gt;"
                       LastKnownLocation="Package_1152.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -793,8 +869,91 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="3d8778f6-20f2-4077-841e-0a41bde9c83c"
+            isDerived="false"
+            sourceEndRoleName="IRelatable"
+            targetEndRoleName="Relation2D"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="6425f226-eb04-4daa-be5b-03cad68e8f45"
+              LastKnownName="Relation2D"
+              LastKnownLocation="Package_1808.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="529a5771-16a3-45f0-9e3f-8efb45da0c3e"
+                  name="IRelatable"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="79d9a273-529b-4c83-8373-16f3f7eea3ec"
+                  name="Relation2D"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="c8d0f969-25c3-4bac-971d-160ef051a7eb"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="9a8a76a8-0e71-4e2b-98e8-d30269a0ddbf"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
+        <ownedOperations>
+          <operation
+            Id="29eb4204-b30c-4604-81bd-448f84cc78df"
+            name="GetRelatingPoints"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="08ab9857-2961-44fb-abe7-92701d883b74"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7af83b35-369b-4a95-a99c-dc55e6a35ba5"
+                      LastKnownName="IList&lt;Point2D&gt;"
+                      LastKnownLocation="Package_1152.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
       </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="7af83b35-369b-4a95-a99c-dc55e6a35ba5"
+        name="IList&lt;Point2D&gt;" />
     </packageHasNamedElement>
   </packagedElements>
 </package>
