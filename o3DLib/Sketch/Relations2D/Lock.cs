@@ -14,9 +14,63 @@ namespace Sketching.Relations2D
 
 	public class Lock : Relation2D, IRelation2D
 	{
+
+        private IRelatable relatable;
+
+        private double lockX;
+        private double lockY;
+
+        private IList<Relation2D> childRelations;
+
+        public Lock(IRelatable relatable)
+        {
+
+            childRelations = new List<Relation2D>();
+
+            this.relatable = relatable;
+
+
+            if(this.relatable is Point2D)
+            {
+
+                this.lockX = (this.relatable as Point2D).X;
+                this.lockY = (this.relatable as Point2D).Y;
+
+                return;
+            }
+
+            IList<Point2D> relatingPoints = this.relatable.GetRelatingPoints();
+
+            foreach (Point2D point in relatingPoints.Reverse())
+            {
+                Lock childLock = new Lock(point);
+                childLock.Parent = this;
+                point.Relation2D.Add(childLock);
+                childRelations.Add(childLock);
+            }
+
+        }
+
 		public override bool Satisfy()
 		{
-			throw new System.NotImplementedException();
+            bool state = true;
+            if(this.relatable is Point2D)
+            {
+                (this.relatable as Point2D).X = this.lockX;
+                (this.relatable as Point2D).Y = this.lockY;
+            } else
+            {
+                foreach(IRelation2D relation in this.childRelations)
+                {
+                    if(!relation.Satisfy())
+                    {
+                        state = false;
+                    }
+                }
+            }
+
+            return state;
+
 		}
 
 	}

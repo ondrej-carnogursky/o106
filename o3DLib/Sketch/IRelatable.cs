@@ -14,9 +14,7 @@ namespace Sketching
 
 	public interface IRelatable 
 	{
-		IEnumerable<IRelation2D> IRelation2D { get;set; }
-
-		IEnumerable<Relation2D> Relation2D { get;set; }
+		IList<Relation2D> Relation2D { get;set; }
 
 		IList<Point2D> GetRelatingPoints();
 

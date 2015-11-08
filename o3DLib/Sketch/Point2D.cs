@@ -11,49 +11,58 @@ namespace Sketching
     using System.Linq;
     using System.Text;
     using Relations2D;
+    using System.Windows;
 
     public class Point2D : IRelatable
 	{
-		public virtual bool IsDriven
+
+
+
+
+        public double X
+        {
+            get { return (double)GetValue(XProperty); }
+            set { SetValue(XProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for X.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty XProperty =
+            DependencyProperty.Register("X", typeof(double), typeof(Point2D), new PropertyMetadata(0));
+
+
+
+
+
+
+        public double Y
+        {
+            get { return (double)GetValue(YProperty); }
+            set { SetValue(YProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Y.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty YProperty =
+            DependencyProperty.Register("Y", typeof(double), typeof(Point2D), new PropertyMetadata(0));
+
+        
+
+
+
+
+
+        public virtual bool IsDriven
 		{
 			get;
 			set;
 		}
 
-        public IEnumerable<IRelation2D> IRelation2D
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
+        public IList<Relation2D> Relation2D { get; set; } = new List<Relation2D>();
 
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public IEnumerable<Relation2D> Relation2D
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public virtual void moveTo(double x, double y)
+        public virtual IList<Point2D> GetRelatingPoints()
 		{
-			throw new System.NotImplementedException();
-		}
-
-		public virtual IList<Point2D> GetRelatingPoints()
-		{
-			throw new System.NotImplementedException();
+            IList<Point2D> points = new List<Point2D>();
+            points.Add(this);
+            return points;
 		}
 
 	}
