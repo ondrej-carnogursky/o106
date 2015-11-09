@@ -14,6 +14,19 @@ namespace Sketching.Relations2D
 
 	public class Horizontal : Relation2D, IRelation2D
 	{
+
+        private IList<Relation2D> childRelations = new List<Relation2D>();
+
+        public Horizontal(Entity2D entity)
+        {
+                      
+        }
+
+        public Horizontal(Point2D point1, Point2D point2)
+        {
+
+        }
+
 		public override bool Satisfy()
 		{
 			throw new System.NotImplementedException();
