@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 
-namespace Sketching
+namespace o3DLib.Sketching
 {
     class FullLine2D
     {
-
+        //todo Rename FullLine2D to Ray2D
         public Point point;
 
         public Vector vector;

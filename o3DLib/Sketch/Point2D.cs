@@ -4,7 +4,7 @@
 //     Changes to this file will be lost if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Sketching
+namespace o3DLib.Sketching
 {
     using System;
     using System.Collections.Generic;
@@ -12,43 +12,46 @@ namespace Sketching
     using System.Text;
     using Relations2D;
     using System.Windows;
+    using System.Windows.Media.Media3D;
 
-    public class Point2D : IRelatable
+    public class Point2D : HelixToolkit.Wpf.PointsVisual3D, IRelatable
 	{
+        public Point2D():base()
+        {
+            this.Points = new List<Point3D>() { this.Sketch.RefPlane.GetPoint3D(new Point(0, 0)) };
+        }
 
+        public Sketch Sketch
+        {
+            get
+            {
+                return this.Parent.Parent;
+            }
+        }
 
-
+        public Entity2D Parent { get; set; }
 
         public double X
         {
             get { return (double)GetValue(XProperty); }
             set { SetValue(XProperty, value); }
         }
-
-        // Using a DependencyProperty as the backing store for X.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty XProperty =
-            DependencyProperty.Register("X", typeof(double), typeof(Point2D), new PropertyMetadata(0));
+            DependencyProperty.Register("X", typeof(double), typeof(Point2D), new PropertyMetadata(0,OnDPropertyChanged));
 
-
-
-
-
+        private static void OnDPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var point2D = d as Point2D;
+            point2D.Points[0] = point2D.Sketch.RefPlane.GetPoint3D(new Point(point2D.X, point2D.Y));
+        }
 
         public double Y
         {
             get { return (double)GetValue(YProperty); }
             set { SetValue(YProperty, value); }
         }
-
-        // Using a DependencyProperty as the backing store for Y.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty YProperty =
-            DependencyProperty.Register("Y", typeof(double), typeof(Point2D), new PropertyMetadata(0));
-
-        
-
-
-
-
+            DependencyProperty.Register("Y", typeof(double), typeof(Point2D), new PropertyMetadata(0, OnDPropertyChanged));
 
         public virtual bool IsDriven
 		{
@@ -56,14 +59,16 @@ namespace Sketching
 			set;
 		}
 
-        public IList<Relation2D> Relation2D { get; set; } = new List<Relation2D>();
+        public IList<Relation2D> Relations2D { get; set; } = new List<Relation2D>();
 
         public virtual IList<Point2D> GetRelatingPoints()
 		{
+            //todo WTF??
             IList<Point2D> points = new List<Point2D>();
             points.Add(this);
             return points;
 		}
+        
 
 	}
 }

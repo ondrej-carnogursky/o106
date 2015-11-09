@@ -4,7 +4,7 @@
 //     Changes to this file will be lost if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Sketching
+namespace o3DLib.Sketching
 {
     using System;
     using System.Collections.Generic;
@@ -12,13 +12,15 @@ namespace Sketching
     using System.Text;
     using Relations2D;
 
-    public class Entity2D : IRelatable
+    public class Entity2D : HelixToolkit.Wpf.LinesVisual3D, IRelatable
 	{
-		public virtual IList<Point2D> Points
+		public virtual IList<Point2D> Points2D
 		{
 			get;
 			set;
 		}
+
+        public Sketch Parent { get; set; }
 
         public IEnumerable<IRelation2D> IRelation2D
         {
@@ -34,6 +36,19 @@ namespace Sketching
         }
 
         public IEnumerable<Relation2D> Relation2D
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public IList<Relation2D> Relations2D
         {
             get
             {

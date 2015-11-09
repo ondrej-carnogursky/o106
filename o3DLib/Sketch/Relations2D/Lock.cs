@@ -4,9 +4,9 @@
 //     Changes to this file will be lost if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Sketching.Relations2D
+namespace o3DLib.Sketching.Relations2D
 {
-	using Sketching;
+	using o3DLib.Sketching;
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
@@ -45,7 +45,7 @@ namespace Sketching.Relations2D
             {
                 Lock childLock = new Lock(point);
                 childLock.Parent = this;
-                point.Relation2D.Add(childLock);
+                point.Relations2D.Add(childLock);
                 childRelations.Add(childLock);
             }
 

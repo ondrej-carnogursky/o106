@@ -7,7 +7,8 @@ using System.Windows.Media;
 using System.Windows.Media.Media3D;
 using HelixToolkit.Wpf;
 using o3DLib.Extensions;
-
+using o3DLib.Sketching;
+using MSE = MathNet.Spatial.Euclidean;
 
 namespace o3DLib//.Viewport
 {
@@ -78,6 +79,25 @@ namespace o3DLib//.Viewport
             refPlane.quad.Point2 = poly3D.Points[1];
             refPlane.quad.Point3 = poly3D.Points[2];
             refPlane.quad.Point4 = poly3D.Points[3];
+        }
+
+        public Point3D GetPoint3D(Point point)
+        {
+            var center = this.Plane.Position;
+            var normal = this.ReverseSide ? -this.Plane.Normal : this.Plane.Normal;
+            var xVector = this.ReverseSide ? -this.XAxis : this.XAxis; //refPlane.Plane.Normal.FindAnyPerpendicular();
+            var yVector = Vector3D.CrossProduct(xVector, normal);
+            return new Point3D(center.X + (point.X * xVector).X, center.Y + (point.Y * yVector).Y, center.Z + (0 * normal).Z);
+        }
+
+        public Point2D GetPoint2D(Point3D point)
+        {
+            var center = this.Plane.Position;
+            var normal = this.ReverseSide ? -this.Plane.Normal : this.Plane.Normal;
+            var xVector = this.ReverseSide ? -this.XAxis : this.XAxis; //refPlane.Plane.Normal.FindAnyPerpendicular();
+            var yVector = Vector3D.CrossProduct(xVector, normal);
+            MSE.Plane plane = new MSE.Plane();
+            return new Point3D(center.X + (point.X * xVector).X, center.Y + (point.Y * yVector).Y, center.Z + (0 * normal).Z);
         }
     }
 }

@@ -4,9 +4,9 @@
 //     Changes to this file will be lost if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Sketching
+namespace o3DLib.Sketching
 {
-	using Sketching.Relations2D;
+	using o3DLib.Sketching.Relations2D;
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
@@ -14,7 +14,7 @@ namespace Sketching
 
 	public interface IRelatable 
 	{
-		IList<Relation2D> Relation2D { get;set; }
+		IList<Relation2D> Relations2D { get;set; }
 
 		IList<Point2D> GetRelatingPoints();
 

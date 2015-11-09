@@ -4,15 +4,22 @@
 //     Changes to this file will be lost if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Sketching
+namespace o3DLib.Sketching
 {
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Text;
+    using System.Windows.Media.Media3D;
 
 	public class Line2D : Entity2D
 	{
+        public Line2D():base() {}
+        public Line2D(Point3D start,Point3D end):this()
+        {
+            this.Points2D = new List<Point2D>() { start, end };
+        }
+
 		public virtual void moveTo(double x, double y)
 		{
 			throw new System.NotImplementedException();
