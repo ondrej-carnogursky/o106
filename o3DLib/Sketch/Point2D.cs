@@ -16,11 +16,22 @@ namespace o3DLib.Sketching
 
     public class Point2D : HelixToolkit.Wpf.PointsVisual3D, IRelatable
 	{
-        public Point2D():base() { }
+        public Point2D():base() { this.Size = 5; }
         public Point2D(Entity2D parent):this()
         {
             this.Parent = parent;
             this.Points = new List<Point3D>() { this.Sketch.RefPlane.GetPoint3D(new Point(X, Y)) };
+        }
+
+        public Point2D(Entity2D parent, Point point) : this(parent)
+        {
+            this.X = point.X;
+            this.Y = point.Y;
+        }
+
+        protected override void UpdateGeometry()
+        {
+            base.UpdateGeometry();
         }
 
         public Sketch Sketch
@@ -45,6 +56,7 @@ namespace o3DLib.Sketching
         {
             var point2D = d as Point2D;
             point2D.Points[0] = point2D.Sketch.RefPlane.GetPoint3D(new Point(point2D.X, point2D.Y));
+            point2D.UpdateGeometry();
         }
 
         public double Y
@@ -54,6 +66,7 @@ namespace o3DLib.Sketching
         }
         public static readonly DependencyProperty YProperty =
             DependencyProperty.Register("Y", typeof(double), typeof(Point2D), new PropertyMetadata(0.0, OnDPropertyChanged));
+        private Point point;
 
         public virtual bool IsDriven
 		{

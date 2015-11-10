@@ -15,6 +15,7 @@ namespace o3DLib.Sketching
 
 	public class Line2D : Entity2D
 	{
+        public Line2D(Sketch parent):base(parent) { }
         public Line2D(Sketch parent, Point3D start, Point3D end) : base(parent,start,end) {}
         public Line2D(Sketch parent, Point2D start, Point2D end) : base(parent, start, end) { }
 

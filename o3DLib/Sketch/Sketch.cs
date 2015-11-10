@@ -11,11 +11,26 @@ namespace o3DLib.Sketching
     using System.Linq;
     using System.Text;
     using System.Windows;
+    using System.Collections.ObjectModel;
+    using System.Windows.Media.Media3D;
 
     public class Sketch: System.Windows.Media.Media3D.ModelVisual3D
 	{
 
+        public Sketch():base()
+        {
+            this.Entities.CollectionChanged += Entities_CollectionChanged;
+        }
 
+        private void Entities_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            if(e.OldItems!=null)
+                foreach (Visual3D child in e.OldItems)
+                    this.Children.Remove(child);
+            if (e.NewItems != null)
+                foreach (Visual3D child in e.NewItems)
+                    this.Children.Add(child);
+        }
 
         public RefPlane RefPlane
         {
@@ -28,13 +43,13 @@ namespace o3DLib.Sketching
 
 
 
-        public List<Entity2D> Entities
+        public ObservableCollection<Entity2D> Entities
         {
-            get { return (List<Entity2D>)GetValue(EntitiesProperty); }
+            get { return (ObservableCollection<Entity2D>)GetValue(EntitiesProperty); }
             set { SetValue(EntitiesProperty, value); }
         }
         public static readonly DependencyProperty EntitiesProperty =
-            DependencyProperty.Register("Entities", typeof(List<Entity2D>), typeof(Sketch), new PropertyMetadata(new List<Entity2D>()));
+            DependencyProperty.Register("Entities", typeof(ObservableCollection<Entity2D>), typeof(Sketch), new PropertyMetadata(new ObservableCollection<Entity2D>()));
 
 
 
