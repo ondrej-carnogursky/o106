@@ -7,9 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "o106", "o106\o106.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "o3DLib", "o3DLib\o3DLib.csproj", "{4D5A9A81-CC98-4143-B56A-5013815A3119}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelixToolkit.Wpf_NET40", "o3DLib\HelixToolkit.Wpf\HelixToolkit.Wpf_NET40.csproj", "{27ED13F0-C6B2-4ABA-A837-52F4775D5455}"
-EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ModelingProject", "ModelingProject\ModelingProject.modelproj", "{0C1FF207-DCB0-4918-88BB-C7ED7B11DFD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelixToolkit", "o3DLib\HelixToolkit\HelixToolkit.csproj", "{7C0E987E-CC34-4B19-BA6B-B381AEABB530}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelixToolkit.Wpf_NET40", "o3DLib\HelixToolkit.Wpf\HelixToolkit.Wpf_NET40.csproj", "{27ED13F0-C6B2-4ABA-A837-52F4775D5455}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +27,18 @@ Global
 		{4D5A9A81-CC98-4143-B56A-5013815A3119}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D5A9A81-CC98-4143-B56A-5013815A3119}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D5A9A81-CC98-4143-B56A-5013815A3119}.Release|Any CPU.Build.0 = Release|Any CPU
-		{27ED13F0-C6B2-4ABA-A837-52F4775D5455}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{27ED13F0-C6B2-4ABA-A837-52F4775D5455}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{27ED13F0-C6B2-4ABA-A837-52F4775D5455}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{27ED13F0-C6B2-4ABA-A837-52F4775D5455}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0C1FF207-DCB0-4918-88BB-C7ED7B11DFD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0C1FF207-DCB0-4918-88BB-C7ED7B11DFD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C1FF207-DCB0-4918-88BB-C7ED7B11DFD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C1FF207-DCB0-4918-88BB-C7ED7B11DFD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C0E987E-CC34-4B19-BA6B-B381AEABB530}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C0E987E-CC34-4B19-BA6B-B381AEABB530}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C0E987E-CC34-4B19-BA6B-B381AEABB530}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C0E987E-CC34-4B19-BA6B-B381AEABB530}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27ED13F0-C6B2-4ABA-A837-52F4775D5455}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27ED13F0-C6B2-4ABA-A837-52F4775D5455}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27ED13F0-C6B2-4ABA-A837-52F4775D5455}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27ED13F0-C6B2-4ABA-A837-52F4775D5455}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

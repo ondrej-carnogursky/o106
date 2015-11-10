@@ -29,17 +29,23 @@ namespace o106
             this.Loaded += MainWindow_Loaded;
         }
 
+        public o3DLib.Sketching.Entity2D Entity { get; set; }
+
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            //Point2D p1 = new Point2D() { X = 0, Y = 0 };
-            //Point2D p2 = new Point2D() { X = 100, Y = 100 };
-            //line2D.Points2D.Add(p1);
-            //line2D.Points2D.Add(p2);
+
             var line2d = new Line2D(sketch);
             sketch.Entities.Add(line2d);
             line2d.Points2D.Add(new Point2D(line2d) { X = 0, Y = 0 });
             line2d.Points2D.Add(new Point2D(line2d) { X = 100, Y = 100 });
+            var line2 = new Line2D(sketch);
+            sketch.Entities.Add(line2);
+            line2.Points2D.Add(new Point2D(line2) { X = 0, Y = 0 });
+            line2.Points2D.Add(new Point2D(line2) { X = 100, Y = 100 });
+            //line2.Relations2D.Add(new o3DLib.Sketching.Relations2D.Lock(line2));
             viewport.Viewport.MouseLeftButtonUp += viewport_MouseLeftButtonUp;
+
+
         }
 
         private void viewport_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)

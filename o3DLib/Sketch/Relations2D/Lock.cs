@@ -53,24 +53,7 @@ namespace o3DLib.Sketching.Relations2D
 
 		public override bool Satisfy()
 		{
-            bool state = true;
-            if(this.relatable is Point2D)
-            {
-                (this.relatable as Point2D).X = this.lockX;
-                (this.relatable as Point2D).Y = this.lockY;
-            } else
-            {
-                foreach(IRelation2D relation in this.childRelations)
-                {
-                    if(!relation.Satisfy())
-                    {
-                        state = false;
-                    }
-                }
-            }
-
-            return state;
-
+            return true;
 		}
 
 	}

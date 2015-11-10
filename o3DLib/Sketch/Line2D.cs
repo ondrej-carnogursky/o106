@@ -19,20 +19,6 @@ namespace o3DLib.Sketching
         public Line2D(Sketch parent, Point3D start, Point3D end) : base(parent,start,end) {}
         public Line2D(Sketch parent, Point2D start, Point2D end) : base(parent, start, end) { }
 
-        public virtual void moveTo(double x, double y)
-		{
-			throw new System.NotImplementedException();
-		}
-
-		public virtual void rotate(double angle)
-		{
-			throw new System.NotImplementedException();
-		}
-
-		public virtual void stretch(double newLength)
-		{
-			throw new System.NotImplementedException();
-		}
 
 	}
 }

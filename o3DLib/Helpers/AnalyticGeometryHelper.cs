@@ -1,4 +1,6 @@
-﻿using System;
+﻿using o3DLib.Extensions;
+using o3DLib.Sketching;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +22,7 @@ namespace o3DLib.Helpers
 
         // Code adapted from Paul Bourke:
         // http://local.wasp.uwa.edu.au/~pbourke/geometry/sphereline/raysphere.c
-        public static bool GetCircleLineIntersect(double x1, double y1, double x2, double y2, double cx, double cy, double cr)
+        public static bool DoesCircleLineIntersect(double x1, double y1, double x2, double y2, double cx, double cy, double cr)
         {
             double dx = x2 - x1;
             double dy = y2 - y1;
@@ -76,6 +78,126 @@ namespace o3DLib.Helpers
                     return false;
                 }
             }
+        }
+
+
+        public static IList<Point> GetCircleFullLineIntersection(Circle2D circle, FullLine2D line)
+        {
+            IList<Point> list = new List<Point>();
+
+            double a = Math.Pow(line.Vector.X, 2) + Math.Pow(line.Vector.Y, 2);
+            double b = 2 * (line.Vector.X * (line.Point.X - circle.Center.X)
+                + line.Vector.Y * (line.Point.Y - circle.Center.Y));
+
+            double c = Math.Pow(circle.Center.X, 2) + Math.Pow(circle.Center.Y, 2);
+            c += Math.Pow(line.Point.X, 2) + Math.Pow(line.Point.Y, 2);
+            c -= 2 * (circle.Center.X * line.Point.X + circle.Center.Y * line.Point.Y);
+            c -= Math.Pow(circle.Radius, 2);
+            double bb4ac = b * b - 4 * a * c;
+
+            if (bb4ac < 0)
+                return list;
+            else if (bb4ac == 0)
+            {
+                double mu = -b / (2 * a);
+                Point intersectionPoint = new Point(line.Point.X + mu * line.Vector.X,
+                                                    line.Point.Y + mu * line.Vector.Y);
+                list.Add(intersectionPoint);
+            }
+            else
+            {
+
+                double mu = -b + Math.Sqrt(bb4ac) / (2 * a);
+                Point intersectionPoint1 = new Point(line.Point.X + mu * line.Vector.X,
+                                                    line.Point.Y + mu * line.Vector.Y);
+                mu = -b - Math.Sqrt(bb4ac) / (2 * a);
+                Point intersectionPoint2 = new Point(line.Point.X + mu * line.Vector.X,
+                                                    line.Point.Y + mu * line.Vector.Y);
+
+                list.Add(intersectionPoint1);
+                list.Add(intersectionPoint2);
+            }
+
+            return list;
+        }
+
+
+        public static IList<Point> GetLineFullLineIntersection(Line2D line1, FullLine2D line2)
+        {
+            IList<Point> list = new List<Point>();
+
+            Point2D startPoint = line1.GetKeyPoint(KeyPointType.Start);
+            Point2D endPoint = line1.GetKeyPoint(KeyPointType.End);
+
+            FullLine2D fullLine = new FullLine2D(startPoint, endPoint);
+
+            IList<Point> intersect = line2.Intersection(fullLine);
+            if (intersect.Count > 0 && (
+                                       intersect[0].X > Math.Min(startPoint.X, endPoint.X)
+                                    && intersect[0].X < Math.Max(startPoint.X, endPoint.X)
+                                    && intersect[0].Y > Math.Min(startPoint.Y, endPoint.Y)
+                                    && intersect[0].Y < Math.Max(startPoint.Y, endPoint.Y)
+                                 )
+                )
+            {
+                list.Add(intersect[0]);
+            }
+
+            return list;
+        }
+
+        public static IList<Point> GetFullLinePointIntersection(FullLine2D line, Point2D point)
+        {
+            IList<Point> list = new List<Point>();
+
+            double c = -(line.Vector.X * line.Point.X) - (line.Vector.Y * line.Point.Y);
+
+            if ((line.Vector.X * point.X + line.Vector.Y * point.Y + c).IsEqual(0))
+            {
+                list.Add(new Point(point.X, point.Y));
+            }
+
+            return list;
+        }
+
+
+        public static IList<Point> GetCirclePointIntersection(Circle2D circle, Point2D point)
+        {
+            IList<Point> list = new List<Point>();
+
+            if((Math.Pow((point.X - circle.Center.X), 2) + Math.Pow((point.Y - circle.Center.Y), 2)).IsEqual(circle.Radius))
+            {
+                list.Add(new Point(point.X, point.Y));
+            }
+
+            return list;
+        }
+
+        public static IList<Point> GetCircleLineIntersection(Circle2D circle, Line2D line)
+        {
+            IList<Point> list = new List<Point>();
+
+            Point2D startPoint = line.GetKeyPoint(KeyPointType.Start);
+            Point2D endPoint = line.GetKeyPoint(KeyPointType.End);
+
+
+            IList<Point> fullLineIntersections = circle.Intersection(
+                new FullLine2D(startPoint, endPoint)
+            );
+
+
+            foreach (Point p in fullLineIntersections)
+            {
+                if (p.X < Math.Max(startPoint.X, endPoint.X)
+                    && p.X > Math.Min(startPoint.X, endPoint.X)
+                    && p.Y < Math.Max(startPoint.Y, endPoint.Y)
+                    && p.Y > Math.Min(startPoint.Y, endPoint.Y))
+                {
+                    list.Add(p);
+                }
+            }
+
+            return list;
         }
 
         private static double dist(double x1,double y1, double x2, double y2)

@@ -14,6 +14,7 @@ namespace o3DLib.Sketching
     using o3DLib.Extensions;
     using System.Windows.Media.Media3D;
     using System.Windows.Media;
+    using Sketching.Relations2D;
 
     public class Entity2D : HelixToolkit.Wpf.LinesVisual3D, IRelatable
 	{
@@ -72,58 +73,32 @@ namespace o3DLib.Sketching
 
         public Sketch Parent { get; set; }
 
-        public IEnumerable<IRelation2D> IRelation2D
-        {
-            get
-            {
-                return null; //throw new NotImplementedException();
-            }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public IEnumerable<Relation2D> Relation2D
-        {
-            get
-            {
-                return null; //throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public IList<Relation2D> Relations2D
-        {
-            get
-            {
-                return null; //throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public IList<Relation2D> Relations2D { get; set; }
 
         public virtual Point2D GetKeyPoint(KeyPointType type)
 		{
-			throw new System.NotImplementedException();
+			switch(type)
+            {
+                case KeyPointType.Start:
+                    return this.Points2D.First();
+                case KeyPointType.Middle:
+                    return new Point2D((this.Points2D.Last().X - this.Points2D.First().X) / 2,
+                        (this.Points2D.Last().Y - this.Points2D.First().Y) / 2);
+                case KeyPointType.End:
+                    return this.Points2D.Last();
+            }
+            return null;
 		}
 
 		public virtual bool SatisfyRelations()
 		{
-			throw new System.NotImplementedException();
+            return true;
 		}
 
 		public virtual IList<Point2D> GetRelatingPoints()
 		{
-			throw new System.NotImplementedException();
+            return this.Points2D;
 		}
 
 	}

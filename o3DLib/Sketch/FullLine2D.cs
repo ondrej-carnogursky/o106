@@ -6,52 +6,62 @@ using System.Windows;
 
 namespace o3DLib.Sketching
 {
-    class FullLine2D
+    public class FullLine2D
     {
         //todo Rename FullLine2D to Ray2D
-        public Point point;
+        public Point Point { get; set; }
 
-        public Vector vector;
+        public Vector Vector { get; set; }
         
 
         public FullLine2D(Point point, Vector vector)
         {
-            this.point = point;
-            this.vector = vector;
+            this.Point = point;
+            this.Vector = vector;
         }
 
         public FullLine2D(Point2D point, Vector vector)
         {
-            this.point = new Point(point.X, point.Y);
-            this.vector = vector;
+            this.Point = new Point(point.X, point.Y);
+            this.Vector = vector;
         }
 
         public FullLine2D(Point point, double angle)
         {
-            this.point = point;
-            this.vector = new Vector(Math.Cos(angle), Math.Sin(angle));
+            this.Point = point;
+            this.Vector = new Vector(Math.Cos(angle), Math.Sin(angle));
         }
 
         public FullLine2D(Point2D point, double angle)
         {
-            this.point = new Point(point.X, point.Y);
-            this.vector = new Vector(Math.Cos(angle), Math.Sin(angle));
+            this.Point = new Point(point.X, point.Y);
+            this.Vector = new Vector(Math.Cos(angle), Math.Sin(angle));
         }
 
+        public FullLine2D(Point2D point1, Point2D point2)
+        {
+            this.Point = new Point(point1.X, point1.Y);
+            this.Vector = new Vector(point2.X - point1.X, point2.Y - point1.Y);
+        }
 
+        public FullLine2D(Point point1, Point point2)
+        {
+            this.Point = point1;
+            this.Vector = new Vector(point2.X - point1.X, point2.Y - point1.Y);
+        }
 
-        public IList<Point> intersection(FullLine2D line)
+        public IList<Point> Intersection(FullLine2D line)
         {
 
             IList<Point> list = new List<Point>();
 
-            double denominator = (this.vector.X * line.vector.X - this.vector.Y * line.vector.Y);
+            double denominator = (this.Vector.X * line.Vector.X - this.Vector.Y * line.Vector.Y);
 
             if (denominator != (double)0)
             {
-                double t1 = ((this.point.X - line.point.X) * line.vector.Y + (line.point.Y - this.point.Y) * line.vector.Y) / denominator;
+                double t1 = ((this.Point.X - line.Point.X) * line.Vector.Y + (line.Point.Y - this.Point.Y) * line.Vector.Y) / denominator;
 
-                Point p = new Point(this.point.X + this.vector.X * t1, this.point.Y + this.vector.Y * t1);
+                Point p = new Point(this.Point.X + this.Vector.X * t1, this.Point.Y + this.Vector.Y * t1);
                 list.Add(p);
 
             }
@@ -60,9 +70,20 @@ namespace o3DLib.Sketching
         }
 
 
+        public IList<Point> Intersection(Circle2D circle)
+        {
+            return Helpers.AnalyticGeometryHelper.GetCircleFullLineIntersection(circle, this);
+        }
 
+        public IList<Point> Intersection(Line2D line)
+        {
+            return Helpers.AnalyticGeometryHelper.GetLineFullLineIntersection(line, this);
+        }
 
-
+        public IList<Point> Intersection(Point2D point)
+        {
+            return Helpers.AnalyticGeometryHelper.GetFullLinePointIntersection(this, point);
+        }
        
     }
 }

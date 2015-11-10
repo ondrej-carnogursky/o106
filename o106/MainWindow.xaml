@@ -15,7 +15,21 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="2*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <ListView DisplayMemberPath="Name" ItemsSource="{Binding Entities,ElementName=sketch}"></ListView>
+        <ListView ItemsSource="{Binding Entities,ElementName=sketch}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="{Binding Name}"></TextBlock>
+                        <ListView SelectedItem="{Binding Entity, ElementName=window}" ItemsSource="{Binding Relations2D}" DisplayMemberPath="Name" Grid.Row="1"></ListView>
+                        
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
         <o3d:Viewport3D Grid.Column="1" x:Name="viewport">
             <hx:DefaultLights></hx:DefaultLights>
             <!--<o3d:RefPlane Plane="{Binding ConstructionPlane,ElementName=viewport}" Size="1000"></o3d:RefPlane>-->

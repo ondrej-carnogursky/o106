@@ -40,12 +40,6 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="SolidKit">
-      <HintPath>libs\SolidKit.dll</HintPath>
-    </Reference>
-    <Reference Include="SolidKitPro">
-      <HintPath>libs\SolidKitPro.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
@@ -60,6 +54,7 @@
     <Compile Include="Extensions\sysExt.cs" />
     <Compile Include="Helpers\AnalyticGeometryHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sketch\Circle2D.cs" />
     <Compile Include="Sketch\Entity2D.cs" />
     <Compile Include="Sketch\FullLine2D.cs" />
     <Compile Include="Sketch\IRelatable.cs" />
@@ -82,17 +77,16 @@
     <Compile Include="Viewport\Viewport3D.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagrams\RefPlane.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="HelixToolkit.Wpf\HelixToolkit.Wpf_NET40.csproj">
       <Project>{27ed13f0-c6b2-4aba-a837-52f4775d5455}</Project>
       <Name>HelixToolkit.Wpf_NET40</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagrams\RefPlane.cd" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

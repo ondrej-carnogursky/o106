@@ -6,13 +6,13 @@
 //------------------------------------------------------------------------------
 namespace o3DLib.Sketching
 {
-	using o3DLib.Sketching.Relations2D;
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
+    using o3DLib.Sketching.Relations2D;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
 
-	public interface IRelatable 
+    public interface IRelatable 
 	{
 		IList<Relation2D> Relations2D { get;set; }
 

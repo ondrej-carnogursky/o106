@@ -17,6 +17,13 @@ namespace o3DLib.Sketching
     public class Point2D : HelixToolkit.Wpf.PointsVisual3D, IRelatable
 	{
         public Point2D():base() { this.Size = 5; }
+
+        public Point2D(double X, double Y) : base()
+        {
+            this.X = X;
+            this.Y = Y;
+        }
+
         public Point2D(Entity2D parent):this()
         {
             this.Parent = parent;
