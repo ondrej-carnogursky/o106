@@ -100,7 +100,7 @@ namespace o3DLib//.Viewport
             MSE.Plane plane = new MSE.Plane();
             //M3D.GeneralTransform3DTo2D aT = M3D.GeneralTransform3DTo2D.
 
-            return new Point3D(center.X + (point.X * xVector).X, center.Y + (point.Y * yVector).Y, center.Z + (0 * normal).Z);
+            return new Point2D(); //center.X + (point.X * xVector).X, center.Y + (point.Y * yVector).Y, center.Z + (0 * normal).Z);
         }
 
 

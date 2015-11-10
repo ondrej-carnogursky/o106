@@ -17,7 +17,7 @@ namespace o3DLib.Sketching
         public Line2D():base() {}
         public Line2D(Point3D start,Point3D end):this()
         {
-            this.Points2D = new List<Point2D>() { start, end };
+            this.Points2D = new List<Point2D>() { Parent.RefPlane.GetPoint2D(start), Parent.RefPlane.GetPoint2D(end) };
         }
 
 		public virtual void moveTo(double x, double y)
