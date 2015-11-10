@@ -6,32 +6,59 @@
 //------------------------------------------------------------------------------
 namespace o3DLib.Sketching.Relations2D
 {
-	using o3DLib.Sketching;
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
+    using o3DLib.Sketching;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Windows;
 
-	public class Horizontal : Relation2D, IRelation2D
+    public class Horizontal : Relation2D
 	{
 
         private IList<Relation2D> childRelations = new List<Relation2D>();
 
-        public Horizontal(Entity2D entity)
+        private Point2D driving;
+
+        public Horizontal(Entity2D entity):this(entity.GetKeyPoint(KeyPointType.Start), entity.GetKeyPoint(KeyPointType.End))
         {
-                      
+            
         }
 
         public Horizontal(Point2D point1, Point2D point2)
         {
+            this.driving = point1;
+            //this.driven = point2;
+
+            IIntersectable point = new Point2D(0, 0);
+            if (Satisfy(ref point, point2))
+            {
+                point2.Point = (point as Point2D).Point;
+            }
+        }
+
+        public override bool Satisfy(ref IIntersectable shape)
+        {
+            var result = new FullLine2D(driving, new Vector(1, 0));
+
+            shape = result;
+
+            return true;
 
         }
 
-		public override bool Satisfy()
-		{
-			throw new System.NotImplementedException();
-		}
+        public bool Satisfy(ref IIntersectable shape, Point2D point2)
+        {
 
-	}
+            IIntersectable result = new FullLine2D(driving, new Vector(1, 0));
+
+            var p = result.Intersection(new FullLine2D(point2, new Vector(0, 1))).First();
+
+            shape = (point2 == null ? result : new Point2D(point2.Parent, p));
+            return shape != null;
+
+
+        }
+    }
 }
 

@@ -1,12 +1,14 @@
-﻿using System;
+﻿using o3DLib.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows;
+using System.Windows.Media.Media3D;
 
 namespace o3DLib.Sketching
 {
-    public class FullLine2D
+    public class FullLine2D : Entity2D
     {
         //todo Rename FullLine2D to Ray2D
         public Point Point { get; set; }
@@ -52,16 +54,19 @@ namespace o3DLib.Sketching
 
         public IList<Point> Intersection(FullLine2D line)
         {
-
             IList<Point> list = new List<Point>();
 
-            double denominator = (this.Vector.X * line.Vector.X - this.Vector.Y * line.Vector.Y);
+            double denominator = (this.Vector.Y * line.Vector.X - this.Vector.X * line.Vector.Y);
 
-            if (denominator != (double)0)
+            if (!denominator.IsEqual(0))
             {
-                double t1 = ((this.Point.X - line.Point.X) * line.Vector.Y + (line.Point.Y - this.Point.Y) * line.Vector.Y) / denominator;
+                double c1 = this.Vector.Y * this.Point.Y + this.Vector.X * this.Point.X;
+                double c2 = line.Vector.Y * line.Point.Y + line.Vector.X * line.Vector.X;
 
-                Point p = new Point(this.Point.X + this.Vector.X * t1, this.Point.Y + this.Vector.Y * t1);
+                //double t1 = ((this.Point.X - line.Point.X) * line.Vector.Y + (line.Point.Y - this.Point.Y) * line.Vector.Y) / denominator;
+
+                Point p = new Point((line.Vector.X * c1 - this.Vector.X * c2) / denominator,
+                    (this.Vector.Y * c2 - line.Vector.Y * c1) / denominator);
                 list.Add(p);
 
             }
@@ -84,6 +89,15 @@ namespace o3DLib.Sketching
         {
             return Helpers.AnalyticGeometryHelper.GetFullLinePointIntersection(this, point);
         }
-       
+
+        public override IList<Point> Intersection(IIntersectable shape)
+        {
+            if(shape is FullLine2D)
+            {
+                return Intersection(shape as FullLine2D);
+            }
+
+            return null;
+        }
     }
 }

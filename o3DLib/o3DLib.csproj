@@ -57,6 +57,7 @@
     <Compile Include="Sketch\Circle2D.cs" />
     <Compile Include="Sketch\Entity2D.cs" />
     <Compile Include="Sketch\FullLine2D.cs" />
+    <Compile Include="Sketch\IIntersectable.cs" />
     <Compile Include="Sketch\IRelatable.cs" />
     <Compile Include="Sketch\KeyPointType.cs" />
     <Compile Include="Sketch\Line2D.cs" />

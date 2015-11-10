@@ -14,8 +14,8 @@ namespace o3DLib.Sketching.Relations2D
 
 	public interface IRelation2D 
 	{
-		bool Satisfy();
-
+		bool Satisfy(ref IIntersectable shape);
+        
 	}
 }
 

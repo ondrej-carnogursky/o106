@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:o106"
         xmlns:o3d="clr-namespace:o3DLib;assembly=o3DLib"
         xmlns:osk="clr-namespace:o3DLib.Sketching;assembly=o3DLib"
-        xmlns:hx="http://helix-toolkit.org/wpf"
+        xmlns:hx="clr-namespace:HelixToolkit.Wpf;assembly=HelixToolkit.Wpf"
         mc:Ignorable="d"
         Name="window"
         Title="MainWindow" Height="350" Width="525">

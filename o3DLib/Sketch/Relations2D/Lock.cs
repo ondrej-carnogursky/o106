@@ -12,7 +12,7 @@ namespace o3DLib.Sketching.Relations2D
 	using System.Linq;
 	using System.Text;
 
-	public class Lock : Relation2D, IRelation2D
+	public class Lock : Relation2D
 	{
 
         private IRelatable relatable;
@@ -22,40 +22,10 @@ namespace o3DLib.Sketching.Relations2D
 
         private IList<Relation2D> childRelations;
 
-        public Lock(IRelatable relatable)
+        public override bool Satisfy(ref IIntersectable shape)
         {
-
-            childRelations = new List<Relation2D>();
-
-            this.relatable = relatable;
-
-
-            if(this.relatable is Point2D)
-            {
-
-                this.lockX = (this.relatable as Point2D).X;
-                this.lockY = (this.relatable as Point2D).Y;
-
-                return;
-            }
-
-            IList<Point2D> relatingPoints = this.relatable.GetRelatingPoints();
-
-            foreach (Point2D point in relatingPoints.Reverse())
-            {
-                Lock childLock = new Lock(point);
-                childLock.Parent = this;
-                point.Relations2D.Add(childLock);
-                childRelations.Add(childLock);
-            }
-
+            throw new NotImplementedException();
         }
-
-		public override bool Satisfy()
-		{
-            return true;
-		}
-
-	}
+    }
 }
 

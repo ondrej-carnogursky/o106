@@ -200,6 +200,38 @@ namespace o3DLib.Helpers
             return list;
         }
 
+    public static Point get_line_intersection(o3DLib.Sketching.FullLine2D l,Point p,Vector v)
+        {
+            double p0_x = l.Point.X;
+            double p0_y = l.Point.Y;
+            double p1_x = p0_x + l.Vector.X;
+            double p1_y = p0_x + l.Vector.X;
+            double p2_x = p.X;
+            double p2_y = p.Y;
+            double p3_x = p2_x + v.X;
+            double p3_y = p2_y + v.Y;
+            double s1_x, s1_y, s2_x, s2_y;
+            s1_x = p1_x - p0_x; s1_y = p1_y - p0_y;
+            s2_x = p3_x - p2_x; s2_y = p3_y - p2_y;
+
+            double s, t;
+            s = (-s1_y * (p0_x - p2_x) + s1_x * (p0_y - p2_y)) / (-s2_x * s1_y + s1_x * s2_y);
+            t = (s2_x * (p0_y - p2_y) - s2_y * (p0_x - p2_x)) / (-s2_x * s1_y + s1_x * s2_y);
+
+            //if (s >= 0 && s <= 1 && t >= 0 && t <= 1)
+            //{
+            //   // Collision detected
+            //    if (i_x != NULL)
+                    var i_x = p0_x + (t * s1_x);
+            //   if (i_y != NULL)
+                    var i_y = p0_y + (t * s1_y);
+            return new Point(i_x, i_y);
+            //    return 1;
+            //}
+
+            //return 0; // No collision
+        }
+
         private static double dist(double x1,double y1, double x2, double y2)
         {
             return (new Point(x2, y2) - new Point(x1, y1)).Length;

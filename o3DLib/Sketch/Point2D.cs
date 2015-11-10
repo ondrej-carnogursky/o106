@@ -14,26 +14,24 @@ namespace o3DLib.Sketching
     using System.Windows;
     using System.Windows.Media.Media3D;
 
-    public class Point2D : HelixToolkit.Wpf.PointsVisual3D, IRelatable
+    public class Point2D : HelixToolkit.Wpf.PointsVisual3D, IRelatable, IIntersectable
 	{
         public Point2D():base() { this.Size = 5; }
 
         public Point2D(double X, double Y) : base()
         {
-            this.X = X;
-            this.Y = Y;
+            this.Point = new Point(X, Y);
         }
 
         public Point2D(Entity2D parent):this()
         {
             this.Parent = parent;
-            this.Points = new List<Point3D>() { this.Sketch.RefPlane.GetPoint3D(new Point(X, Y)) };
+            this.Points = new List<Point3D>() { this.Sketch.RefPlane.GetPoint3D(Point) };
         }
 
         public Point2D(Entity2D parent, Point point) : this(parent)
         {
-            this.X = point.X;
-            this.Y = point.Y;
+            this.Point = point;
         }
 
         protected override void UpdateGeometry()
@@ -51,29 +49,32 @@ namespace o3DLib.Sketching
 
         public Entity2D Parent { get; set; }
 
-        public double X
+
+
+
+        public Point Point
         {
-            get { return (double)GetValue(XProperty); }
-            set { SetValue(XProperty, value); }
+            get { return (Point)GetValue(PointProperty); }
+            set
+            {
+                this.SatisfyRelations(ref value);
+                SetValue(PointProperty, value);
+            }
         }
-        public static readonly DependencyProperty XProperty =
-            DependencyProperty.Register("X", typeof(double), typeof(Point2D), new PropertyMetadata(0.0,OnDPropertyChanged));
+
+        // Using a DependencyProperty as the backing store for Point.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty PointProperty =
+            DependencyProperty.Register("Point", typeof(Point), typeof(Point2D), new PropertyMetadata(new Point(0, 0), OnDPropertyChanged));
+
+
 
         private static void OnDPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var point2D = d as Point2D;
-            point2D.Points[0] = point2D.Sketch.RefPlane.GetPoint3D(new Point(point2D.X, point2D.Y));
+            point2D.Points[0] = point2D.Sketch.RefPlane.GetPoint3D(point2D.Point);
             point2D.UpdateGeometry();
         }
 
-        public double Y
-        {
-            get { return (double)GetValue(YProperty); }
-            set { SetValue(YProperty, value); }
-        }
-        public static readonly DependencyProperty YProperty =
-            DependencyProperty.Register("Y", typeof(double), typeof(Point2D), new PropertyMetadata(0.0, OnDPropertyChanged));
-        private Point point;
 
         public virtual bool IsDriven
 		{
@@ -90,8 +91,22 @@ namespace o3DLib.Sketching
             points.Add(this);
             return points;
 		}
-        
 
-	}
+        public void SatisfyRelations(ref Point point)
+        {
+            //foreach(Relation2D rel in this.Relations2D)
+            //{
+            //    rel.Satisfy();
+            //}
+        }
+
+        public IList<Point> Intersection(IIntersectable shape)
+        {
+            return shape.Intersection(this);
+        }
+
+        public double X { get { return Point.X; } }
+        public double Y { get { return Point.Y; } }
+    }
 }
 

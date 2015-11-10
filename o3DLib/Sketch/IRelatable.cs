@@ -11,6 +11,7 @@ namespace o3DLib.Sketching
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
+    using System.Windows;
 
     public interface IRelatable 
 	{
@@ -18,6 +19,8 @@ namespace o3DLib.Sketching
 
 		IList<Point2D> GetRelatingPoints();
 
-	}
+        void SatisfyRelations(ref Point point);
+
+    }
 }
 

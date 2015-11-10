@@ -33,16 +33,15 @@ namespace o106
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-
             var line2d = new Line2D(sketch);
             sketch.Entities.Add(line2d);
-            line2d.Points2D.Add(new Point2D(line2d) { X = 0, Y = 0 });
-            line2d.Points2D.Add(new Point2D(line2d) { X = 100, Y = 100 });
+            line2d.Points2D.Add(new Point2D(line2d) { Point = new Point(0, 0)});
+            line2d.Points2D.Add(new Point2D(line2d) { Point = new Point(100, 100)});
             var line2 = new Line2D(sketch);
             sketch.Entities.Add(line2);
-            line2.Points2D.Add(new Point2D(line2) { X = 0, Y = 0 });
-            line2.Points2D.Add(new Point2D(line2) { X = 100, Y = 100 });
-            //line2.Relations2D.Add(new o3DLib.Sketching.Relations2D.Lock(line2));
+            line2.Points2D.Add(new Point2D(line2) { Point = new Point(10, 200) });
+            line2.Points2D.Add(new Point2D(line2) { Point = new Point(0, 20) });
+            line2.Relations2D.Add(new o3DLib.Sketching.Relations2D.Horizontal(line2));
             viewport.Viewport.MouseLeftButtonUp += viewport_MouseLeftButtonUp;
 
 

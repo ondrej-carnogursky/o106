@@ -12,13 +12,15 @@ namespace o3DLib.Sketching.Relations2D
 	using System.Linq;
 	using System.Text;
 
-	public class Connect : Relation2D, IRelation2D
-	{
-		public override bool Satisfy()
-		{
-			throw new System.NotImplementedException();
-		}
+    public class Connect : Relation2D
+    {
+        
 
-	}
+
+        public override bool Satisfy(ref IIntersectable shape)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
 

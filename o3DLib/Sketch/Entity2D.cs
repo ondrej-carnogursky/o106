@@ -14,10 +14,13 @@ namespace o3DLib.Sketching
     using o3DLib.Extensions;
     using System.Windows.Media.Media3D;
     using System.Windows.Media;
-    using Sketching.Relations2D;
+    using System.Windows;
 
-    public class Entity2D : HelixToolkit.Wpf.LinesVisual3D, IRelatable
+    public abstract class Entity2D : HelixToolkit.Wpf.LinesVisual3D, IRelatable, IIntersectable
 	{
+
+        public Entity2D() { }
+
         public Entity2D(Sketch parent):base()
         {
             Parent = parent;
@@ -31,7 +34,7 @@ namespace o3DLib.Sketching
             {
                 var s = string.Empty;
                 foreach (var aPoint in this.Points2D)
-                    s += aPoint.X + "," + aPoint.Y + " ; ";
+                    s += aPoint.Point.X + "," + aPoint.Point.Y + " ; ";
                 return s; //base.ToString();
             }
         }
@@ -101,6 +104,12 @@ namespace o3DLib.Sketching
             return this.Points2D;
 		}
 
-	}
+        public abstract IList<Point> Intersection(IIntersectable shape);
+
+        public void SatisfyRelations(ref Point point)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
 
