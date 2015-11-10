@@ -11,14 +11,40 @@ namespace o3DLib.Sketching
     using System.Linq;
     using System.Text;
     using Relations2D;
+    using o3DLib.Extensions;
+    using System.Windows.Media.Media3D;
 
     public class Entity2D : HelixToolkit.Wpf.LinesVisual3D, IRelatable
 	{
-		public virtual IList<Point2D> Points2D
+        public Entity2D(Sketch parent):base()
+        {
+            Parent = parent;
+            this.Points2D.CollectionChanged += Points2D_CollectionChanged;
+        }
+
+        public Entity2D(Sketch parent, params Point2D[] points):this(parent)
+        {
+            foreach (var point2D in points)
+                this.Points2D.Add(point2D);
+        }
+
+        public Entity2D(Sketch parent, params Point3D[] points) : this(parent)
+        {
+            foreach (var point3D in points)
+                this.Points2D.Add(parent.RefPlane.GetPoint2D(point3D));
+        }
+
+        private void Points2D_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            foreach (Point2D point2D in e.NewItems)
+                point2D.Parent = this;
+        }
+
+        public virtual System.Collections.ObjectModel.ObservableCollection<Point2D> Points2D
 		{
 			get;
 			set;
-		}
+        } = new System.Collections.ObjectModel.ObservableCollection<Point2D>();
 
         public Sketch Parent { get; set; }
 

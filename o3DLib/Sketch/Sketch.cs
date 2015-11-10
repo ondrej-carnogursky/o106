@@ -6,19 +6,38 @@
 //------------------------------------------------------------------------------
 namespace o3DLib.Sketching
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Windows;
 
-	public class Sketch
+    public class Sketch: System.Windows.Media.Media3D.ModelVisual3D
 	{
-		public virtual o3DLib.RefPlane RefPlane
-		{
-			get;
-			set;
-		}
 
-	}
+
+
+        public RefPlane RefPlane
+        {
+            get { return (RefPlane)GetValue(RefPlaneProperty); }
+            set { SetValue(RefPlaneProperty, value); }
+        }
+        // Using a DependencyProperty as the backing store for RefPlane.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty RefPlaneProperty =
+            DependencyProperty.Register("RefPlane", typeof(RefPlane), typeof(Sketch), new PropertyMetadata(null));
+
+
+
+        public List<Entity2D> Entities
+        {
+            get { return (List<Entity2D>)GetValue(EntitiesProperty); }
+            set { SetValue(EntitiesProperty, value); }
+        }
+        public static readonly DependencyProperty EntitiesProperty =
+            DependencyProperty.Register("Entities", typeof(List<Entity2D>), typeof(Sketch), new PropertyMetadata(new List<Entity2D>()));
+
+
+
+    }
 }
 

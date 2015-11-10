@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:o106"
         xmlns:o3d="clr-namespace:o3DLib;assembly=o3DLib"
+        xmlns:osk="clr-namespace:o3DLib.Sketching;assembly=o3DLib"
         xmlns:hx="http://helix-toolkit.org/wpf"
         mc:Ignorable="d"
+        Name="window"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <o3d:Viewport3D x:Name="viewport">
@@ -18,7 +20,7 @@
                     <hx:Plane3D Position="0,0,0" Normal="0,0,1"></hx:Plane3D>
                 </o3d:RefPlane.Plane>
             </o3d:RefPlane>
-            <o3d:RefPlane XAxis="0,1,0">
+            <o3d:RefPlane x:Name="refPlane" XAxis="0,1,0">
                 <o3d:RefPlane.Plane>
                     <hx:Plane3D Position="0,0,0" Normal="1,0,0"></hx:Plane3D>
                 </o3d:RefPlane.Plane>
@@ -28,6 +30,9 @@
                     <hx:Plane3D Position="0,0,0" Normal="0,-1,0"></hx:Plane3D>
                 </o3d:RefPlane.Plane>
             </o3d:RefPlane>
+            <osk:Sketch x:Name="sketch" RefPlane="{Binding Path='',ElementName=refPlane}">
+                <!--<osk:Line2D x:Name="line2D"></osk:Line2D>-->
+            </osk:Sketch>
         </o3d:Viewport3D>
     </Grid>
 </Window>
