@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Media3D;
+using M3D = System.Windows.Media.Media3D;
 using HelixToolkit.Wpf;
 using o3DLib.Extensions;
 using o3DLib.Sketching;
@@ -97,7 +98,11 @@ namespace o3DLib//.Viewport
             var xVector = this.ReverseSide ? -this.XAxis : this.XAxis; //refPlane.Plane.Normal.FindAnyPerpendicular();
             var yVector = Vector3D.CrossProduct(xVector, normal);
             MSE.Plane plane = new MSE.Plane();
+            //M3D.GeneralTransform3DTo2D aT = M3D.GeneralTransform3DTo2D.
+
             return new Point3D(center.X + (point.X * xVector).X, center.Y + (point.Y * yVector).Y, center.Z + (0 * normal).Z);
         }
+
+
     }
 }

@@ -40,6 +40,12 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="SolidKit">
+      <HintPath>libs\SolidKit.dll</HintPath>
+    </Reference>
+    <Reference Include="SolidKitPro">
+      <HintPath>libs\SolidKitPro.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
@@ -52,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\sysExt.cs" />
+    <Compile Include="Helpers\AnalyticGeometryHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sketch\Entity2D.cs" />
     <Compile Include="Sketch\FullLine2D.cs" />
