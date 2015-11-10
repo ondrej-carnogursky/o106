@@ -11,16 +11,15 @@ namespace o3DLib.Sketching
 	using System.Linq;
 	using System.Text;
     using System.Windows.Media.Media3D;
+    using System.Collections.ObjectModel;
 
 	public class Line2D : Entity2D
 	{
-        public Line2D():base() {}
-        public Line2D(Point3D start,Point3D end):this()
-        {
-            this.Points2D = new List<Point2D>() { Parent.RefPlane.GetPoint2D(start), Parent.RefPlane.GetPoint2D(end) };
-        }
+        public Line2D(Sketch parent):base(parent) { }
+        public Line2D(Sketch parent, Point3D start, Point3D end) : base(parent,start,end) {}
+        public Line2D(Sketch parent, Point2D start, Point2D end) : base(parent, start, end) { }
 
-		public virtual void moveTo(double x, double y)
+        public virtual void moveTo(double x, double y)
 		{
 			throw new System.NotImplementedException();
 		}

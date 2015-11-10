@@ -5,15 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:o106"
         xmlns:o3d="clr-namespace:o3DLib;assembly=o3DLib"
+        xmlns:osk="clr-namespace:o3DLib.Sketching;assembly=o3DLib"
         xmlns:hx="http://helix-toolkit.org/wpf"
         mc:Ignorable="d"
+        Name="window"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <o3d:Viewport3D x:Name="viewport">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ListView DisplayMemberPath="Name" ItemsSource="{Binding Entities,ElementName=sketch}"></ListView>
+        <o3d:Viewport3D Grid.Column="1" x:Name="viewport">
             <hx:DefaultLights></hx:DefaultLights>
             <!--<o3d:RefPlane Plane="{Binding ConstructionPlane,ElementName=viewport}" Size="1000"></o3d:RefPlane>-->
-            <hx:SphereVisual3D Radius="50"></hx:SphereVisual3D>
-            <o3d:RefPlane XAxis="1,0,0" ReverseSide="False">
+            <!--<hx:SphereVisual3D Radius="50"></hx:SphereVisual3D>-->
+            <osk:Sketch x:Name="sketch" RefPlane="{Binding Path='',ElementName=refPlane}"></osk:Sketch>
+            <o3d:RefPlane x:Name="refPlane" XAxis="1,0,0" ReverseSide="False">
                 <o3d:RefPlane.Plane>
                     <hx:Plane3D Position="0,0,0" Normal="0,0,1"></hx:Plane3D>
                 </o3d:RefPlane.Plane>

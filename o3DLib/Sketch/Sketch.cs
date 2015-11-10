@@ -6,19 +6,53 @@
 //------------------------------------------------------------------------------
 namespace o3DLib.Sketching
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Windows;
+    using System.Collections.ObjectModel;
+    using System.Windows.Media.Media3D;
 
-	public class Sketch
+    public class Sketch: System.Windows.Media.Media3D.ModelVisual3D
 	{
-		public virtual o3DLib.RefPlane RefPlane
-		{
-			get;
-			set;
-		}
 
-	}
+        public Sketch():base()
+        {
+            this.Entities.CollectionChanged += Entities_CollectionChanged;
+        }
+
+        private void Entities_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            if(e.OldItems!=null)
+                foreach (Visual3D child in e.OldItems)
+                    this.Children.Remove(child);
+            if (e.NewItems != null)
+                foreach (Visual3D child in e.NewItems)
+                    this.Children.Add(child);
+        }
+
+        public RefPlane RefPlane
+        {
+            get { return (RefPlane)GetValue(RefPlaneProperty); }
+            set { SetValue(RefPlaneProperty, value); }
+        }
+        // Using a DependencyProperty as the backing store for RefPlane.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty RefPlaneProperty =
+            DependencyProperty.Register("RefPlane", typeof(RefPlane), typeof(Sketch), new PropertyMetadata(null));
+
+
+
+        public ObservableCollection<Entity2D> Entities
+        {
+            get { return (ObservableCollection<Entity2D>)GetValue(EntitiesProperty); }
+            set { SetValue(EntitiesProperty, value); }
+        }
+        public static readonly DependencyProperty EntitiesProperty =
+            DependencyProperty.Register("Entities", typeof(ObservableCollection<Entity2D>), typeof(Sketch), new PropertyMetadata(new ObservableCollection<Entity2D>()));
+
+
+
+    }
 }
 

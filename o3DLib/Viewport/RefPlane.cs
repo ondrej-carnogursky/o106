@@ -88,19 +88,17 @@ namespace o3DLib//.Viewport
             var normal = this.ReverseSide ? -this.Plane.Normal : this.Plane.Normal;
             var xVector = this.ReverseSide ? -this.XAxis : this.XAxis; //refPlane.Plane.Normal.FindAnyPerpendicular();
             var yVector = Vector3D.CrossProduct(xVector, normal);
-            return new Point3D(center.X + (point.X * xVector).X, center.Y + (point.Y * yVector).Y, center.Z + (0 * normal).Z);
+            return new Point3D(center.X + (point.X * xVector).X, center.Y - (point.Y * yVector).Y, center.Z + (0 * normal).Z);
         }
 
-        public Point2D GetPoint2D(Point3D point)
+        public Point GetPoint(Point3D point3D)
         {
             var center = this.Plane.Position;
             var normal = this.ReverseSide ? -this.Plane.Normal : this.Plane.Normal;
             var xVector = this.ReverseSide ? -this.XAxis : this.XAxis; //refPlane.Plane.Normal.FindAnyPerpendicular();
             var yVector = Vector3D.CrossProduct(xVector, normal);
-            MSE.Plane plane = new MSE.Plane();
-            //M3D.GeneralTransform3DTo2D aT = M3D.GeneralTransform3DTo2D.
-
-            return new Point2D(); //center.X + (point.X * xVector).X, center.Y + (point.Y * yVector).Y, center.Z + (0 * normal).Z);
+            var ipoint3D = this.Plane.LineIntersection(point3D, point3D - normal);
+            return new Point() {X = Vector3D.DotProduct(ipoint3D.Value - center, xVector), Y = -Vector3D.DotProduct(ipoint3D.Value - center, yVector)};
         }
 
 
