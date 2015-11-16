@@ -62,8 +62,8 @@ namespace o3DLib//.Viewport
             var refPlane = d as RefPlane;
             if (refPlane.Plane == null) return;
             var center = refPlane.Plane.Position;
-            var normal = refPlane.ReverseSide ? -refPlane.Plane.Normal : refPlane.Plane.Normal;
-            var xVector = refPlane.ReverseSide ? -refPlane.XAxis : refPlane.XAxis; //refPlane.Plane.Normal.FindAnyPerpendicular();
+            var normal = refPlane.ReverseSide ? refPlane.Plane.Normal : -refPlane.Plane.Normal;
+            var xVector = refPlane.ReverseSide ? refPlane.XAxis : -refPlane.XAxis; //refPlane.Plane.Normal.FindAnyPerpendicular();
             var yVector = Vector3D.CrossProduct(xVector, normal);
             var poly3D = new Polygon3D(new List<Point3D>() { center - refPlane.Size * (xVector - yVector) / 2,
                 center - refPlane.Size * (xVector + yVector) / 2, center + refPlane.Size * (xVector - yVector) / 2,
@@ -85,8 +85,8 @@ namespace o3DLib//.Viewport
         public Point3D GetPoint3D(Point point)
         {
             var center = this.Plane.Position;
-            var normal = this.ReverseSide ? -this.Plane.Normal : this.Plane.Normal;
-            var xVector = this.ReverseSide ? -this.XAxis : this.XAxis; //refPlane.Plane.Normal.FindAnyPerpendicular();
+            var normal = this.ReverseSide ? this.Plane.Normal : -this.Plane.Normal;
+            var xVector = this.ReverseSide ? this.XAxis : -this.XAxis; //refPlane.Plane.Normal.FindAnyPerpendicular();
             var yVector = Vector3D.CrossProduct(xVector, normal);
             return new Point3D(center.X + (point.X * xVector).X, center.Y - (point.Y * yVector).Y, center.Z + (0 * normal).Z);
         }
@@ -94,8 +94,8 @@ namespace o3DLib//.Viewport
         public Point GetPoint(Point3D point3D)
         {
             var center = this.Plane.Position;
-            var normal = this.ReverseSide ? -this.Plane.Normal : this.Plane.Normal;
-            var xVector = this.ReverseSide ? -this.XAxis : this.XAxis; //refPlane.Plane.Normal.FindAnyPerpendicular();
+            var normal = this.ReverseSide ? this.Plane.Normal : -this.Plane.Normal;
+            var xVector = this.ReverseSide ? this.XAxis : -this.XAxis; //refPlane.Plane.Normal.FindAnyPerpendicular();
             var yVector = Vector3D.CrossProduct(xVector, normal);
             var ipoint3D = this.Plane.LineIntersection(point3D, point3D - normal);
             return new Point() {X = Vector3D.DotProduct(ipoint3D.Value - center, xVector), Y = -Vector3D.DotProduct(ipoint3D.Value - center, yVector)};

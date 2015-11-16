@@ -16,5 +16,6 @@ namespace o3DLib.Sketching
 		Start = 0,
 		End = 1,
 		Middle = 2,
-	}
+        Center = 3,
+    }
 }

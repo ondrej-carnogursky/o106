@@ -6,19 +6,39 @@
 //------------------------------------------------------------------------------
 namespace o3DLib.Sketching.Relations2D
 {
-	using o3DLib.Sketching;
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
+    using o3DLib.Sketching;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Windows;
 
-	public class Equal : Relation2D
-	{
+    public class Equal : Relation2D, IReversable
+    {
 
-        public override bool Satisfy(ref IIntersectable shape)
+        public Equal(params Entity2D[] entities) : base(entities) { }
+        public Equal(params Point2D[] points) : base(points) { }
+
+
+        public override IList<Relation2D> ByPass(params Point2D[] points)
         {
-            throw new NotImplementedException();
+            Equal rel = new Equal(points);
+            return new List<Relation2D>() { rel };
         }
+
+
+        public override IIntersectable Satisfy()
+        {
+            // Applyable only on 4 points
+            if (this.Relatables.Count() == 4)
+            {
+                double distance = o3DLib.Helpers.AnalyticGeometryHelper.GetDistance((this.Relatables[0] as Point2D).Point, (this.Relatables[1] as Point2D).Point);
+                return new Circle2D((this.Relatables[2] as Point2D).Point, distance);
+            }
+
+            return null;
+        }
+
     }
 }
 

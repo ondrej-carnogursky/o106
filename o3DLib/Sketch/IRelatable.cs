@@ -12,14 +12,17 @@ namespace o3DLib.Sketching
     using System.Linq;
     using System.Text;
     using System.Windows;
+    using System.Collections.ObjectModel;
 
     public interface IRelatable 
 	{
-		IList<Relation2D> Relations2D { get;set; }
+		ObservableCollection<Relation2D> Relations2D { get;set; }
 
 		IList<Point2D> GetRelatingPoints();
 
-        void SatisfyRelations(ref Point point);
+        IIntersectable SatisfyRelations(Point? p = null);
+
+        string Name { get; }
 
     }
 }

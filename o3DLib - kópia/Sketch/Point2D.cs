@@ -15,15 +15,12 @@ namespace o3DLib.Sketching
     using System.Windows.Media.Media3D;
     using Extensions;
     using Helpers;
-    using System.Collections.ObjectModel;
 
-    public class Point2D : HelixToolkit.Wpf.PointsVisual3D, IRelatable, IIntersectable, IPoint, IMovable
+    public class Point2D : HelixToolkit.Wpf.PointsVisual3D, IRelatable, IIntersectable, IPoint
 	{
-
-        #region Constructors
         public Point2D():base() { this.Size = 10; }
 
-        public Point2D(double X, double Y) : this()
+        public Point2D(double X, double Y) : base()
         {
             this.Point = new Point(X, Y);
         }
@@ -43,9 +40,15 @@ namespace o3DLib.Sketching
         {
             Point = point;
         }
-        #endregion
 
-        #region Properties
+        public string Name
+        {
+            get
+            {
+                return Math.Round(this.Point.X, 0) + "," + Math.Round(this.Point.Y, 0);
+            }
+        }
+
         public Sketch Sketch
         {
             get
@@ -78,25 +81,25 @@ namespace o3DLib.Sketching
         public static readonly DependencyProperty PointProperty =
             DependencyProperty.Register("Point", typeof(Point), typeof(Point2D), new PropertyMetadata(new Point(0, 0), OnDPropertyChanged));
 
-
-        public virtual bool IsSatisfied { get; set; }
-
-        public double X { get { return Point.X; } }
-        public double Y { get { return Point.Y; } }
-
-        public string Name
+        private static void OnDPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            get
+            var point2D = d as Point2D;
+            if (point2D.Parent != null)
             {
-                return Math.Round(this.Point.X, 0) + "," + Math.Round(this.Point.Y, 0);
+                point2D.Points[0] = point2D.Sketch.RefPlane.GetPoint3D(point2D.Point);
+                point2D.UpdateGeometry();
+                point2D.Parent.Update();
             }
         }
 
-        public ObservableCollection<Relation2D> Relations2D { get; set; } = new ObservableCollection<Relation2D>();
+        public virtual bool IsSatisfied
+		{
+			get;
+			set;
+		}
 
-        #endregion
+        public IList<Relation2D> Relations2D { get; set; } = new List<Relation2D>();
 
-        #region Methods
         public virtual IList<Point2D> GetRelatingPoints()
 		{
             return new List<Point2D>() { this };
@@ -108,7 +111,7 @@ namespace o3DLib.Sketching
 
             foreach (Relation2D rel in this.Relations2D)
             {
-                if (rel.IsDriven(this) && rel.ChildRelations.Count == 0) {
+                if(!rel.IsDriven(this)) {
                     IIntersectable temp = rel.Satisfy();
                     possibles.Add(temp);
                 }
@@ -137,11 +140,10 @@ namespace o3DLib.Sketching
             {
                 rel.Relatables.Except<IRelatable>(new List<IRelatable>() { this });
 
-                if (!rel.IsDriven(this) && rel.ChildRelations.Count == 0)
+                if(!rel.IsDriven(this))
                 {
                     Point2D driven = rel.GetDriven();
-                    if(driven != this)
-                        driven.Point = new Point(driven.X, driven.Y);
+                    driven.Point = new Point(driven.X, driven.Y);
                 }
             }
         }
@@ -151,32 +153,10 @@ namespace o3DLib.Sketching
         {
             return shape.Intersection(this);
         }
+        
 
-        public bool Move(double dx, double dy)
-        {
-            Point storedPoint = this.Point;
-            this.Point = new Point(this.Point.X + dx, this.Point.Y + dy);
-
-            if (this.Point.IsEqual(storedPoint))
-                return false;
-
-            return true;
-        }
-
-        #endregion
-
-        #region Events
-        private static void OnDPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var point2D = d as Point2D;
-            if (point2D.Parent != null)
-            {
-                point2D.Points[0] = point2D.Sketch.RefPlane.GetPoint3D(point2D.Point);
-                point2D.UpdateGeometry();
-                point2D.Parent.Update();
-            }
-        }
-        #endregion
+        public double X { get { return Point.X; } }
+        public double Y { get { return Point.Y; } }
     }
 }
 

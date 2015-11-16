@@ -15,17 +15,29 @@ namespace o3DLib.Sketching.Relations2D
 	public class Lock : Relation2D
 	{
 
-        private IRelatable relatable;
 
-        private double lockX;
-        private double lockY;
 
-        private IList<Relation2D> childRelations;
+        public Lock(params IRelatable[] entities) : base(entities) { }
+        public Lock(params Point2D[] points):base(points) { }
 
-        public override bool Satisfy(ref IIntersectable shape)
+
+        public override IList<Relation2D> ByPass(params Point2D[] points)
         {
-            throw new NotImplementedException();
+            IList<Relation2D> rels = new List<Relation2D>();
+
+            foreach(Point2D point in points)
+                rels.Add(new Lock(point));
+
+            return  rels;
         }
+
+        
+
+        public override IIntersectable Satisfy()
+        {
+            return (this.Relatables.First() as Point2D);
+        }
+
     }
 }
 

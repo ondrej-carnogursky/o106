@@ -13,17 +13,55 @@ namespace o3DLib.Sketching
     using System.Windows.Media.Media3D;
     using System.Collections.ObjectModel;
     using System.Windows;
+    using Extensions;
 
-    public class Line2D : Entity2D
+    public class Line2D : Entity2D, ISegment
 	{
+        #region Constructors
+        public Line2D():base() { }
         public Line2D(Sketch parent):base(parent) { }
         public Line2D(Sketch parent, Point3D start, Point3D end) : base(parent,start,end) {}
         public Line2D(Sketch parent, Point2D start, Point2D end) : base(parent, start, end) { }
 
-        public override IList<Point> Intersection(IIntersectable shape)
+        public Line2D(Point startPoint, Point endPoint)
         {
-            throw new NotImplementedException();
+            this.Points2D.Add(new Point2D(startPoint));
+            this.Points2D.Add(new Point2D(endPoint));
         }
+
+        public Line2D(Point2D startPoint, Point2D endPoint)
+        {
+            this.Points2D.Add(startPoint);
+            this.Points2D.Add(endPoint);
+        }
+        #endregion
+        public override Point2D GetKeyPoint(KeyPointType type)
+        {
+            switch(type)
+            {
+                case KeyPointType.Start: return Points2D[0];
+                case KeyPointType.End: return Points2D[1];
+                case KeyPointType.Middle: return new Point2D(Points2D[0].Point.Middle(Points2D[1].Point)); //todo Musi byt Invisible + doriesit Parent atd...
+                default: return null;
+            }
+        }
+
+        
+        public IPoint StartPoint {
+            get
+            {
+                return this.GetKeyPoint(KeyPointType.Start);
+            }
+        }
+
+        public IPoint EndPoint
+        {
+            get
+            {
+                return this.GetKeyPoint(KeyPointType.End);
+            }
+        }
+
     }
 }
 

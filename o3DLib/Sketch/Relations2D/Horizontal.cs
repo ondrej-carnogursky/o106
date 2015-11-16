@@ -13,52 +13,28 @@ namespace o3DLib.Sketching.Relations2D
     using System.Text;
     using System.Windows;
 
-    public class Horizontal : Relation2D
-	{
+    using Extensions;
 
-        private IList<Relation2D> childRelations = new List<Relation2D>();
+    public class Horizontal : Relation2D, IReversable
+    {
 
-        private Point2D driving;
+        public Horizontal(params Entity2D[] entities) : base(entities) { }
+        public Horizontal(params Point2D[] points):base(points) { }
 
-        public Horizontal(Entity2D entity):this(entity.GetKeyPoint(KeyPointType.Start), entity.GetKeyPoint(KeyPointType.End))
+
+        public override IList<Relation2D> ByPass(params Point2D[] points)
         {
-            
+            Horizontal rel = new Horizontal(points);
+            return new List<Relation2D>() { rel };
         }
 
-        public Horizontal(Point2D point1, Point2D point2)
-        {
-            this.driving = point1;
-            //this.driven = point2;
 
-            IIntersectable point = new Point2D(0, 0);
-            if (Satisfy(ref point, point2))
-            {
-                point2.Point = (point as Point2D).Point;
-            }
+        public override IIntersectable Satisfy()
+        {
+            return new Ray2D((Point2D)this.Relatables[0], new Vector(1, 0));
         }
 
-        public override bool Satisfy(ref IIntersectable shape)
-        {
-            var result = new FullLine2D(driving, new Vector(1, 0));
-
-            shape = result;
-
-            return true;
-
-        }
-
-        public bool Satisfy(ref IIntersectable shape, Point2D point2)
-        {
-
-            IIntersectable result = new FullLine2D(driving, new Vector(1, 0));
-
-            var p = result.Intersection(new FullLine2D(point2, new Vector(0, 1))).First();
-
-            shape = (point2 == null ? result : new Point2D(point2.Parent, p));
-            return shape != null;
-
-
-        }
+        
     }
 }
 

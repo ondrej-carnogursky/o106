@@ -8,48 +8,94 @@
         xmlns:osk="clr-namespace:o3DLib.Sketching;assembly=o3DLib"
         xmlns:hx="clr-namespace:HelixToolkit.Wpf;assembly=HelixToolkit.Wpf"
         mc:Ignorable="d"
-        Name="window"
+        Name="window" WindowState="Maximized"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="2*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <ListView ItemsSource="{Binding Entities,ElementName=sketch}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="20"></RowDefinition>
-                            <RowDefinition Height="*"></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <TextBlock Text="{Binding Name}"></TextBlock>
-                        <ListView SelectedItem="{Binding Entity, ElementName=window}" ItemsSource="{Binding Relations2D}" DisplayMemberPath="Name" Grid.Row="1"></ListView>
-                        
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <o3d:Viewport3D Grid.Column="1" x:Name="viewport">
-            <hx:DefaultLights></hx:DefaultLights>
-            <!--<o3d:RefPlane Plane="{Binding ConstructionPlane,ElementName=viewport}" Size="1000"></o3d:RefPlane>-->
-            <!--<hx:SphereVisual3D Radius="50"></hx:SphereVisual3D>-->
-            <osk:Sketch x:Name="sketch" RefPlane="{Binding Path='',ElementName=refPlane}"></osk:Sketch>
-            <o3d:RefPlane x:Name="refPlane" XAxis="1,0,0" ReverseSide="False">
-                <o3d:RefPlane.Plane>
-                    <hx:Plane3D Position="0,0,0" Normal="0,0,1"></hx:Plane3D>
-                </o3d:RefPlane.Plane>
-            </o3d:RefPlane>
-            <o3d:RefPlane XAxis="0,1,0">
-                <o3d:RefPlane.Plane>
-                    <hx:Plane3D Position="0,0,0" Normal="1,0,0"></hx:Plane3D>
-                </o3d:RefPlane.Plane>
-            </o3d:RefPlane>
-            <o3d:RefPlane XAxis="1,0,0">
-                <o3d:RefPlane.Plane>
-                    <hx:Plane3D Position="0,0,0" Normal="0,-1,0"></hx:Plane3D>
-                </o3d:RefPlane.Plane>
-            </o3d:RefPlane>
-        </o3d:Viewport3D>
-    </Grid>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <ToggleButton Unchecked="Select_Unclick" Checked="Select_Click">Select</ToggleButton>
+            <TextBlock>Filter</TextBlock>
+            <ComboBox x:Name="filter" Width="50">
+                <ComboBoxItem IsSelected="True">Line</ComboBoxItem>
+                <ComboBoxItem>Point</ComboBoxItem>
+            </ComboBox>
+            <ToggleButton Click="Move_Click">Move</ToggleButton>
+            <TextBlock>|</TextBlock>
+            <ToggleButton Click="AddLine_Click">Add Line</ToggleButton>
+            <TextBlock>|</TextBlock>
+            <Button Click="AddHorizontal_Click">Horizontal</Button>
+            <Button Click="AddVertical_Click">Vertical</Button>
+            <Button Click="AddParallel_Click">Parallel</Button>
+            <Button Click="AddPerpendicular_Click">Perpendicular</Button>
+            <Button Click="AddCollinear_Click">Collinear</Button>
+            <TextBlock>|</TextBlock>
+            <Button Click="AddLock_Click">Lock</Button>
+            <Button Click="AddConnect_Click">Connect</Button>
+            <Button Click="AddEqual_Click">Equal</Button>
+        </Menu>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <ListView ItemsSource="{Binding Entities,ElementName=sketch}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="20"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="{Binding Name}"></TextBlock>
+                                <ListView Margin="20,0,0,0" ItemsSource="{Binding Points2D}" Grid.Row="1">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="20"></RowDefinition>
+                                                    <RowDefinition Height="*"></RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <TextBlock Text="{Binding Name}"></TextBlock>
+                                                <ListView Margin="20,0,0,0" ItemsSource="{Binding Relations2D}" DisplayMemberPath="Name" Grid.Row="1"></ListView>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                                <ListView Margin="20,0,0,0" ItemsSource="{Binding Relations2D}" DisplayMemberPath="Name" Grid.Row="2"></ListView>                        
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <ListView Grid.Row="1" ItemsSource="{Binding Selected,ElementName=window}" DisplayMemberPath="Name"></ListView>
+            </Grid>
+            
+            <o3d:Viewport3D Grid.Column="1" x:Name="viewport" Orthographic="True">
+                <o3d:Viewport3D.Camera>
+                    <OrthographicCamera Position="0,0,1000" LookDirection="0,0,999" UpDirection="0,1,0"></OrthographicCamera>
+                </o3d:Viewport3D.Camera>
+                <hx:DefaultLights></hx:DefaultLights>
+                <osk:Sketch x:Name="sketch" RefPlane="{Binding Path='',ElementName=refPlane}"></osk:Sketch>
+                <o3d:RefPlane x:Name="refPlane" XAxis="1,0,0" ReverseSide="False">
+                    <o3d:RefPlane.Plane>
+                        <hx:Plane3D Position="0,0,0" Normal="0,0,1"></hx:Plane3D>
+                    </o3d:RefPlane.Plane>
+                </o3d:RefPlane>
+                <o3d:RefPlane XAxis="0,1,0">
+                    <o3d:RefPlane.Plane>
+                        <hx:Plane3D Position="0,0,0" Normal="1,0,0"></hx:Plane3D>
+                    </o3d:RefPlane.Plane>
+                </o3d:RefPlane>
+                <o3d:RefPlane XAxis="1,0,0">
+                    <o3d:RefPlane.Plane>
+                        <hx:Plane3D Position="0,0,0" Normal="0,-1,0"></hx:Plane3D>
+                    </o3d:RefPlane.Plane>
+                </o3d:RefPlane>
+            </o3d:Viewport3D>
+        </Grid>
+    </DockPanel>
 </Window>

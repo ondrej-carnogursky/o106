@@ -11,14 +11,33 @@ namespace o3DLib.Sketching.Relations2D
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Text;
+    using System.Windows;
 
-	public class Parallel : Relation2D
-	{
+    public class Parallel : Relation2D, IReversable
+    {
 
-        public override bool Satisfy(ref IIntersectable shape)
+        public Parallel(params Entity2D[] entities) : base(entities) { }
+        public Parallel(params Point2D[] points) : base(points) { }
+
+
+        public override IList<Relation2D> ByPass(params Point2D[] points)
         {
-            throw new NotImplementedException();
+            Parallel rel = new Parallel(points);
+            return new List<Relation2D>() { rel };
         }
+
+
+        public override IIntersectable Satisfy()
+        {
+            // Applyable only on 4 points
+            if (this.Relatables.Count() == 4)
+            {
+                return new Ray2D((Point2D)this.Relatables[2], (this.Relatables[1] as Point2D).Point - (this.Relatables[0] as Point2D).Point);
+            }
+
+            return null;
+        }
+
     }
 }
 

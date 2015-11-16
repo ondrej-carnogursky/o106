@@ -6,18 +6,28 @@
 //------------------------------------------------------------------------------
 namespace o3DLib.Sketching.Relations2D
 {
-	using o3DLib.Sketching;
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
+    using o3DLib.Sketching;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Windows;
 
-	public class Vertical : Relation2D
+    public class Vertical : Relation2D, IReversable
 	{
 
-        public override bool Satisfy(ref IIntersectable shape)
+        public Vertical(params Entity2D[] entities) : base(entities) { }
+        public Vertical(params Point2D[] points):base(points) { }
+
+        public override IList<Relation2D> ByPass(params Point2D[] points)
         {
-            throw new NotImplementedException();
+            Vertical rel = new Vertical(points);
+            return new List<Relation2D>() { rel };
+        }
+
+        public override IIntersectable Satisfy()
+        {
+            return new Ray2D((Point2D)this.Relatables[0], new Vector(0, 1));
         }
     }
 }

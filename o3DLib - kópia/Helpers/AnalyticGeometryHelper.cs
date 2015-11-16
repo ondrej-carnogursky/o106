@@ -33,7 +33,7 @@ namespace o3DLib.Helpers
             {
                 Point minPoint = points.First();
                 double minDist = GetDistance(p, minPoint);
-                for (int i = 0; i < points.Count(); i++)
+                for (int i = 1; i < points.Count() - 2; i++)
                 {
                     double dist = GetDistance(p, points[i]);
                     if (dist < minDist)
@@ -61,45 +61,9 @@ namespace o3DLib.Helpers
             return p1.Point;
         }
 
-
-        public static Point? GetNearest(Circle2D c, Point p)
-        {
-            Ray2D r = new Ray2D(c.Center, p);
-            return GetNearest(r.Intersection(c), p);
-        }
-
-        public static Point? GetNearest(Line2D l, Point p)
-        {
-            Point startPoint = new Point(l.StartPoint.X, l.StartPoint.Y);
-            Point endPoint = new Point(l.EndPoint.X, l.EndPoint.Y);
-
-            double x2 = endPoint.X;
-            double y2 = endPoint.Y;
-            Vector v = endPoint - startPoint;
-            double dAB = v.GetMagnitude();
-            double u = ((p.X - startPoint.X) * v.X + (p.Y - startPoint.Y) * v.Y) / dAB;
-            double x = startPoint.X + u * v.X;
-            double y = startPoint.Y + u * v.Y;
-
-            if (x > Math.Min(startPoint.X, endPoint.X)
-            && x < Math.Max(startPoint.X, endPoint.X)
-            && y > Math.Min(startPoint.Y, endPoint.Y)
-            && y < Math.Max(startPoint.Y, endPoint.Y))
-            {
-                return new Point(x, y);
-            } else
-            {
-                return GetNearest(new List<Point>() { startPoint, endPoint }, p);
-            }
-        }
-
-
         public static Vector GetNormal(this Vector v)
         {
-            if (v.X != 0)
-                return new Vector(v.Y, -v.X);
-            else
-                return new Vector(-v.Y, v.X);
+            return new Vector(v.Y,-v.X);
         }
 
         public static IList<Point> GetIntersections(IIntersectable e1, IIntersectable e2)
@@ -236,6 +200,7 @@ namespace o3DLib.Helpers
             return list;
         }
 
+
         public static IList<Point> GetIntersects(ICircle circle, ISegment line)
         {
             IList<Point> list = new List<Point>();
@@ -266,26 +231,6 @@ namespace o3DLib.Helpers
         public static double GetDistance(Point p1, Point p2)
         {
             return Math.Sqrt(Math.Pow(p2.X - p1.X, 2) + Math.Pow(p2.Y - p1.Y, 2));
-        }
-
-        public static double DotProduct(this Vector v, Vector w)
-        {
-            return v.X * w.X + v.Y * v.X;
-        }
-
-        public static bool IsPerpendicularTo(this Vector v, Vector w)
-        {
-            return v.DotProduct(w) == 0;
-        }
-
-        public static double GetMagnitude(this Vector v)
-        {
-            return Math.Pow(v.X, 2) + Math.Pow(v.Y, 2);
-        }
-
-        public static double GetLength(this Vector v)
-        {
-            return Math.Sqrt(v.GetMagnitude());
         }
 
     }

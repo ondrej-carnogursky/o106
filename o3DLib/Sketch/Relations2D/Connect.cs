@@ -14,12 +14,30 @@ namespace o3DLib.Sketching.Relations2D
 
     public class Connect : Relation2D
     {
-        
+        public Connect(params IRelatable[] entities) : base(entities) { }
+        public Connect(params Point2D[] points) : base(points) { }
 
 
-        public override bool Satisfy(ref IIntersectable shape)
+        public override IList<Relation2D> ByPass(params Point2D[] points)
         {
-            throw new NotImplementedException();
+            Connect rel = new Connect(points);
+            return new List<Relation2D>() { rel };
+        }
+
+
+        public override IIntersectable Satisfy()
+        {
+            // Applyable only on 3 or 2 points
+            if (this.Relatables.Count() == 3)
+            {
+                return new Ray2D(this.Relatables[0] as Point2D, this.Relatables[1] as Point2D);
+            }
+            else if(this.Relatables.Count() == 2)
+            {
+                return (this.Relatables[0] as Point2D);
+            }
+
+            return null;
         }
     }
 }

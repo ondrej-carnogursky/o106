@@ -13,33 +13,28 @@ namespace o3DLib.Sketching.Relations2D
     using System.Text;
     using System.Windows;
 
-    public class Perpendicular : Relation2D, IReversable
+    using Extensions;
+
+    public class Horizontal : Relation2D
     {
 
-        public Perpendicular(params Entity2D[] entities) : base(entities) { }
-        public Perpendicular(params Point2D[] points) : base(points) { }
+        public Horizontal(Entity2D entity) : base(entity) { }
+        public Horizontal(params Point2D[] points):base(points) { }
 
 
         public override IList<Relation2D> ByPass(params Point2D[] points)
         {
-            Perpendicular rel = new Perpendicular(points);
+            Horizontal rel = new Horizontal(points);
             return new List<Relation2D>() { rel };
         }
 
 
         public override IIntersectable Satisfy()
         {
-            // Applyable only on 4 points
-            if (this.Relatables.Count() == 4)
-            {
-                Vector parallelVector = (this.Relatables[1] as Point2D).Point - (this.Relatables[0] as Point2D).Point;
-                return new Ray2D((Point2D)this.Relatables[2], o3DLib.Helpers.AnalyticGeometryHelper.GetNormal((parallelVector)));
-            }
-
-            return null;
+            return new Ray2D((Point2D)this.Relatables[0], new Vector(1, 0));
         }
 
-
+        
     }
 }
 
