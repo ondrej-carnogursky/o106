@@ -122,11 +122,21 @@ namespace o3DLib.Sketching
                 case 1:
                     return possibles[0];
                 default:
-                    for (int i = 1; i < possibles.Count; i++)
+                    List<Point> intersections = new List<Point>();
+                    intersections.AddMany(possibles[0].Intersection(possibles[1]));
+                    for (int i = 2; i < possibles.Count; i++)
                     {
-                        // TODO: Intersection of all possibles
+                        List<Point> tempList = new List<Point>();
+                        foreach (Point intersectionPoint in intersections)
+                        {
+                            Point2D p2d = new Point2D(intersectionPoint);
+                            tempList.AddMany(possibles[i].Intersection(p2d));
+                        }
+                        intersections.Clear();
+                        intersections.AddMany(tempList);
                     }
-                    return null;
+
+                    return intersections.Count > 0 ? new Point2D(intersections.GetNearest(this.Point).Value) : null;
             }
         }
 

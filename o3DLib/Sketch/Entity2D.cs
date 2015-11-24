@@ -113,22 +113,19 @@ namespace o3DLib.Sketching
 
         public bool Move(double dx, double dy)
         {
+            // Is able to move?
+            bool isAble = true;
+
             // Store the points
             IList<Point> storedPoints = new List<Point>();
             foreach (Point2D p in this.Points2D)
+            {
                 storedPoints.Add(p.Point);
 
-            //Try to move
-            bool isAble = true;
-            for (int i = 0; i < this.Points2D.Count; i++)
-            {
-
+                //Try to move
                 // If point did not change it's position
-                if (this.Points2D[i].Move(storedPoints[i].X + dx, storedPoints[i].Y + dy))
-                {
-                    isAble = !!false;
-                    break;
-                }
+                if (!p.Move(dx, dy))
+                    isAble = false;
             }
 
             // If is not able to move all points, return them back to their previous position
